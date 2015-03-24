@@ -1,0 +1,48 @@
+{
+  "pages":[
+    {
+      "idName": "/",
+      "page": "pages/b2B/index-fr.html",
+      "partials":[
+        {"name":"system/footer","file":"templates/b2b/footer.hbs"}
+      ],
+      "data":[
+        {"name":"common","file":"data/common.json"}
+      ],
+      "css": [
+        "generated/css/main.css",
+        "generated/css/home.css"
+      ],
+      "js": [
+        "js/libs/jquery.timer.js",
+        "js/libs/tpk.slider.js",
+        "js/libs/tpk.menu.voo.js",
+        "js/main.js",
+        "js/home.js"
+
+      ]
+    },
+    {
+      "idName": "/B2B",
+      "page": "pages/b2B/index-fr.html",
+      "partials":[
+        {"name":"system/footer","file":"templates/b2b/footer.hbs"}
+      ],
+      "data":[
+        {"name":"common","file":"data/common.json"}
+      ],
+      "css": [
+        "generated/css/main.css",
+        "generated/css/home.css"
+      ],
+      "js": [
+        "js/libs/jquery.timer.js",
+        "js/libs/tpk.slider.js",
+        "js/libs/tpk.menu.voo.js",
+        "js/main.js",
+        "js/home.js"
+
+      ]
+    }
+  ]
+}

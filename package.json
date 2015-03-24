@@ -1,0 +1,21 @@
+{
+  "name": "tcdp_web_server",
+  "version": "0.0.1",
+  "description": "This is a web server based on JSON files for navigation and description of the consituing file",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "EXPRESS",
+    "JSON",
+    "NODE"
+  ],
+  "author": "The Crazy Digital Painter",
+  "license": "MIT",
+  "devDependencies": {
+    "express": "^4.12.3",
+    "lodash": "^3.5.0",
+    "morgan": "^1.5.2"
+  }
+}
