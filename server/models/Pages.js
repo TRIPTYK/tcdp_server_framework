@@ -1,22 +1,33 @@
-function PagesModel() {
+var fs = require('fs');
+var _ = require('lodash');
+function pagesModel() {
+  console.log('pagesModel initialized');
   var that = {};
   var pages;
-
-  function init() {
-    fs.readFile(__dirname + "/pages.json", function(err, data) {
-      if (err) return console.log(err);
+  var isModelLoaded = false;
+  fs.readFile(process.cwd() + "/datas/pages.json", function(err, data) {
+    if (err) return console.log(err);
+    try {
       pages = JSON.parse(data).pages;
-    });
-
-    function searchPage(id, model) {
-      return _.find(model, {
-        "idName": id
-      });
+      isModelLoaded = true;
+    } catch (e) {
+      throw e;
     }
-
-    that.searchPage = searchPage;
-
-    return that;
+  });
+  function searchPage(url_page) {
+    if (isModelLoaded) {
+      return _.find(pages, {
+        "id": id
+      });
+    } else{
+      return "NO PAGES with "+id+" was found";
+    }
   }
+
+
+
+  that.searchPage = searchPage;
+  return that;
 }
-module.exports = PagesModel;
+
+module.exports = pagesModel();
