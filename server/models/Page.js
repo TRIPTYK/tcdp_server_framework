@@ -16,10 +16,12 @@ function pageDataModel() {
   }
 
   function setLanguage(idLanguage) {
+
     var acceptedLanguages = ["fr", "nl", "en", "de"];
     var langue = idLanguage.substr(1, 2);
+    console.log(_.includes(acceptedLanguages,langue));
     if (acceptedLanguages.map(function(item) {
-        if (item === langue) return true
+        if (item === langue) return true;
       })) {
       language = langue;
     }else{
