@@ -1,6 +1,8 @@
 var fs = require('fs');
 var _ = require('lodash');
+var modelPages = require('../models/Pages.js');
 var config = require('config');
+
 function pageDataModel() {
   console.log('pageDataModel initialized');
   var that = {};
@@ -8,6 +10,7 @@ function pageDataModel() {
   //PRIVATES VARIABLES
   var language;
   var pageUrl;
+  var pageJson;
 
   function getLanguage() {
     return language;
@@ -19,29 +22,31 @@ function pageDataModel() {
     var langue = tempUrl.substr(1, 2);
     if (_.includes(acceptedLanguages, langue)) {
       language = langue;
-      setUrl(tempUrl);
-    }else{
-      language=config.get('localisation.defaultLanguage');
-      setUrl(language+tempUrl);
+      setPageJson(tempUrl);
+    } else {
+      language = config.get('localisation.defaultLanguage');
+      setPageJson(language + tempUrl);
     }
 
   }
 
-  function setUrl(tempUrl){
-    // console.log(tempUrl.substr(tempUrl.length-1));
-    (tempUrl.substr(tempUrl.length-1) ==="/")?pageUrl = tempUrl.substr(3) : pageUrl = tempUrl.substr(3)+"/";
-
+  function setPageJson(tempUrl) {
+    (tempUrl.substr(tempUrl.length - 1) === "/") ? pageUrl = "/" + tempUrl.substr(3): pageUrl = "/" + tempUrl.substr(3) + "/";
+    pageJson = modelPages.searchPage(pageUrl, language);
   }
 
-  function getUrl(){
+  function getUrl() {
     return pageUrl;
   }
 
+  function getPageJson() {
+    return pageJson;
+  }
 
   that.getLanguage = getLanguage;
   that.setLanguage = setLanguage;
+  that.getPageJson = getPageJson;
   that.getUrl = getUrl;
-  that.setUrl = setUrl;
   return that;
 }
 

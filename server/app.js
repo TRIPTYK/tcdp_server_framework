@@ -5,7 +5,6 @@ var logger = require('morgan');
 
 var app = express();
 app.use(logger());
-
 app.use(require('./controllers'));
 
 console.log("app listening at port "+config.get('application.port'));

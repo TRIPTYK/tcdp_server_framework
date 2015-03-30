@@ -17,7 +17,7 @@
     "meta_keywords_nl": "Be tv vous offre le top du top des nouvelles séries, du cinéma, du sport en direct et des documentaires. Découvrez notre nouvelle offre.",
     "meta_keywords_en": "Be tv vous offre le top du top des nouvelles séries, du cinéma, du sport en direct et des documentaires. Découvrez notre nouvelle offre.",
     "meta_keywords_de": "Be tv vous offre le top du top des nouvelles séries, du cinéma, du sport en direct et des documentaires. Découvrez notre nouvelle offre.",
-    "template": "templates/test",
+    "template": "/static/templates/index",
     "css": [
       "main.css",
       "home.css",
