@@ -16,11 +16,12 @@ function pagesModel() {
     }
   });
 
-  function searchPage(url_page) {
+  function searchPage(url,langue) {
     if (isModelLoaded) {
-      console.log('searchPage');
-      console.log( _.find(pages, {"url": url_page}));
-      return _.find(pages, {"url": url_page});
+      var searchKey = {};
+      searchKey["url_"+langue]=url;
+      console.log( _.find(pages, searchKey));
+      return _.find(pages, searchKey);
     } else {
       return "THE MODEL WAS NOT LOADED";
     }

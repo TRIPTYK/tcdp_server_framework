@@ -13,21 +13,35 @@ function pageDataModel() {
     return language;
   }
 
-  function setLanguage(idLanguage) {
+  function setLanguage(tempUrl) {
 
     var acceptedLanguages = config.get('localisation.acceptedLanguages');
-    var langue = idLanguage.substr(1, 2);
+    var langue = tempUrl.substr(1, 2);
     if (_.includes(acceptedLanguages, langue)) {
       language = langue;
+      setUrl(tempUrl);
     }else{
       language=config.get('localisation.defaultLanguage');
+      setUrl(language+tempUrl);
     }
-    return;
+
+  }
+
+  function setUrl(tempUrl){
+    // console.log(tempUrl.substr(tempUrl.length-1));
+    (tempUrl.substr(tempUrl.length-1) ==="/")?pageUrl = tempUrl.substr(3) : pageUrl = tempUrl.substr(3)+"/";
+
+  }
+
+  function getUrl(){
+    return pageUrl;
   }
 
 
   that.getLanguage = getLanguage;
   that.setLanguage = setLanguage;
+  that.getUrl = getUrl;
+  that.setUrl = setUrl;
   return that;
 }
 
