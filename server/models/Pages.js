@@ -1,5 +1,6 @@
 var fs = require('fs');
 var _ = require('lodash');
+
 function pagesModel() {
   console.log('pagesModel initialized');
   var that = {};
@@ -14,13 +15,14 @@ function pagesModel() {
       throw e;
     }
   });
+
   function searchPage(url_page) {
     if (isModelLoaded) {
-      return _.find(pages, {
-        "id": id
-      });
-    } else{
-      return "NO PAGES with "+id+" was found";
+      console.log('searchPage');
+      console.log( _.find(pages, {"url": url_page}));
+      return _.find(pages, {"url": url_page});
+    } else {
+      return "THE MODEL WAS NOT LOADED";
     }
   }
 

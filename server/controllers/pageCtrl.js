@@ -21,7 +21,7 @@ router.use(function(req,res,next){
 
 router.use(function(req, res,next) {
   console.log("Use pageCtrl");
-  console.log(dataPage.getLanguage())
+  console.log("router:"+dataPage.getLanguage())
   var id =req.path;
   var pageObject = modelPages.searchPage(id);
   if (pageObject) {

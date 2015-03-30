@@ -1,15 +1,13 @@
 var fs = require('fs');
 var _ = require('lodash');
-
+var config = require('config');
 function pageDataModel() {
   console.log('pageDataModel initialized');
   var that = {};
 
   //PRIVATES VARIABLES
   var language;
-
-
-
+  var pageUrl;
 
   function getLanguage() {
     return language;
@@ -17,17 +15,14 @@ function pageDataModel() {
 
   function setLanguage(idLanguage) {
 
-    var acceptedLanguages = ["fr", "nl", "en", "de"];
+    var acceptedLanguages = config.get('localisation.acceptedLanguages');
     var langue = idLanguage.substr(1, 2);
-    console.log(_.includes(acceptedLanguages,langue));
-    if (acceptedLanguages.map(function(item) {
-        if (item === langue) return true;
-      })) {
+    if (_.includes(acceptedLanguages, langue)) {
       language = langue;
     }else{
-      language="fr";
+      language=config.get('localisation.defaultLanguage');
     }
-    return true;
+    return;
   }
 
 
