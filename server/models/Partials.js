@@ -5,7 +5,6 @@ var hbs = require('handlebars');
 var _ = require('lodash');
 
 function partialsModel() {
-  console.log('partialsModel initialized');
   var that = {};
   var partials = [];
 

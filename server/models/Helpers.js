@@ -24,17 +24,15 @@ function helpersModel() {
 
   function getBreadCrumbsRec(id, langue,breads) {
     var arr;
-    console.log(breads);
     (breads !== undefined) ? arr = breads: arr = [];
     if (id) {
       var tempPage = modelPages.searchPageById(id);
-      console.log(tempPage['breadcrumb_' + langue])
       arr.push({
         title: tempPage['breadcrumb_' + langue],
         url: tempPage['url_' + langue]
       });
       if (tempPage.parent) {
-        return getBreadCrumbsRec(tempPage.parent, arr);
+        return getBreadCrumbsRec(tempPage.parent, langue,arr);
       } else {
         return arr;
       }

@@ -1,5 +1,6 @@
 var fs = require('fs');
 var _ = require('lodash');
+var path = require('path');
 var modelPages = require('../models/Pages.js');
 var config = require('config');
 
@@ -29,7 +30,7 @@ function pageDataModel() {
 
     }
       function setPageData(tempUrl) {
-        (tempUrl.substr(tempUrl.length - 1) === "/") ? pageUrl = "/" + tempUrl.substr(3): pageUrl = "/" + tempUrl.substr(3) + "/";
+        (tempUrl.substr(tempUrl.length - 1) === "/") ? pageUrl = path.join("/" , tempUrl.substr(3)): pageUrl =path.join( "/" ,tempUrl.substr(3) ,"/");
         var pageJson = modelPages.searchPage(pageUrl, language);
         if (pageJson) {
           pageData = {};
