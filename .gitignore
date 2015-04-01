@@ -3,7 +3,5 @@
 npm-debug.log
 bower_components
 node_modules
-generated
-dest
-app/js/template-cache.js
+
 distribution
