@@ -9,28 +9,29 @@ var hbs = require('handlebars');
 var modelPages = require('../models/Pages.js');
 var modelPartials = require('../models/Partials.js');
 var dataPage;
-async.series({
-    modelPages: function(callback) {
-      modelPages.init(config.get('modelFiles.pages'), function(err, data) {
-        callback(null, data);
-      });
-    },
-    modelPartials: function(callback) {
-      modelPartials.init("/public/static/partials", function(err, data) {
-        callback(null, data);
-      });
-    }
-  },
-  function(err, results) {
-    require('../models/Helpers.js');
-    routeChain();
-  });
 
-function routeChain() {
+
+
     router.use(function(req, res, next) {
-      dataPage = require('../models/Page.js')();
-      dataPage.setLanguage(req.path);
-      next();
+      async.parallel({
+          modelPages: function(callback) {
+            modelPages.init(config.get('modelFiles.pages'), function(err, data) {
+              callback(null, data);
+            });
+          },
+          modelPartials: function(callback) {
+            modelPartials.init("/public/static/partials", function(err, data) {
+              callback(null, data);
+            });
+          }
+        },
+        function(err, results) {
+          require('../models/Helpers.js');
+          dataPage = require('../models/Page.js')();
+          dataPage.setLanguage(req.path);
+          next();
+        });
+
     });
 
 
@@ -61,7 +62,7 @@ function routeChain() {
 
 
 
-            async.series({
+            async.parallel({
               css: function(callback) {
                 //BUNDLE CSS
                 var css = pageData.css.map(function(item) {
@@ -119,7 +120,7 @@ function routeChain() {
                   });
             })
           });
-        }
+
 
 
         module.exports = router
