@@ -1,0 +1,863 @@
+// @import "compass";
+@import "compass/css3/border-radius";
+@import "compass/utilities/general/float";
+@import "compass/css3/images";
+
+@import "variables";
+@import "mixins";
+@import "layout";
+@import "modules/floatmenu";
+@import "modules/help";
+
+$total-columns: 12;
+$column-width: 81px;
+$gutter-width: 11px;
+$grid-padding: $gutter-width;
+$container-style: static;
+
+#video-carrousel {
+    overflow: hidden;
+    position: relative;
+    background: $black;
+    height: 700px;
+    .container-menu {
+        z-index: 500;
+        position: relative;
+        width: 960px;
+        height: 280px;
+        margin: 0 auto 420px auto;
+        .box-home-menu {
+            .home-menu {
+                position: relative;
+                display: block;
+                width: 300px;
+                height: 280px;
+                top: 30px;
+                z-index: 100;
+                .btn-home-menu {
+                    display: block;
+                    position: relative;
+                    height: 60px;
+                    font-size: 2.5em;
+                    line-height: 1em;
+                    color: $white;
+                    font-family: $museo;
+                    cursor: pointer;
+                    span {
+                        display: inline-block;
+                        vertical-align: top;
+                        padding: 10px;
+                        @include border-radius(5px);
+                        behavior: url('/static/js/lib/PIE.htc');
+                        position: relative;
+                    }
+                }
+                .btn-home-menu:hover span {
+                    background: $darkOpa8;
+                    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#C0000000', endColorstr='#C0000000');
+                    color: $orange;
+                }
+                .btn-home-menu.active span {
+                    display: block;
+                    background: $darkOpa8;
+                    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#C0000000', endColorstr='#C0000000');
+                    color: $orange;
+                    @include border-radius(5px 0 0 5px);
+                    behavior: url('/static/js/lib/PIE.htc');
+                    position: relative;
+                }
+                .btn-home-menu.active:hover span {
+                    display: block;
+                    background: $darkOpa8;
+                    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#C0000000', endColorstr='#C0000000');
+                    color: $orange;
+                    @include border-radius(5px 0 0 5px);
+                    behavior: url('/static/js/lib/PIE.htc');
+                    position: relative;
+                }
+            }
+            .box-content {
+                display: none;
+                position: absolute;
+                top: 30px;
+                right: -15px;
+                width: 975px;
+                height: 566px;
+                padding: 25px 25px 25px 326px;
+                border-radius: 5px;
+                behavior: url('/static/js/lib/PIE.htc');
+                background: $darkOpa8;
+                filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#C0000000', endColorstr='#C0000000');
+                h3 {
+                    display: inline-block;
+                    vertical-align: baseline;
+                    color: $white;
+                    padding: 0 10px 25px 0;
+                    font-size:1.8em !important;
+                }
+                .btn-epg {
+                    display: inline-block;
+                    vertical-align: top;
+                    padding: 0 0 0 10px;
+                    color: $orange;
+                    text-decoration: none;
+                    border-left: 1px solid $greyBorder;
+                }
+                .box-more_info {
+                    position: relative;
+                    color: $white;
+                    font-size: 1.2em;
+                    .btn-more_info {
+                        @include button-border-radius($orange, $orange, $white, 5px, 40px, auto, 20px);
+                        font-size: 21px;
+                        line-height: 40px;
+                        padding: 0 20px;
+                        margin: 10px 0 0 0; 
+                        text-decoration:none;
+                    }
+                    .orange {
+                        color: $orange;
+                        line-height: 60px;
+                    }
+                    .right {
+                        float: right;
+                    }
+                }
+                .box-movie {
+                    display: block;
+                    width: 100%;
+                    padding: 0 0 25px 0;
+                    border-top: 1px solid $greyBorder;
+                    border-bottom: 1px solid $greyBorder;
+                    li {
+                        display: inline-block;
+                        vertical-align: top;
+                        width: 190px;
+                        padding: 25px 0 0 0;
+                        margin: 0 25px 0 0;
+                        color: $white;
+                        font-size: 1.2em;
+                        line-height: 1.2em;
+                        a {
+                            text-decoration: none;
+                            color: $white;
+                        }
+                    }
+                    li:nth-child(3n+3) {
+                        margin: 0;
+                    }
+                }
+            }
+            .box-content.first {
+                border-radius: 0 5px 5px 5px;
+                behavior: url('/static/js/lib/PIE.htc');
+            }
+        }
+    }
+    .player-video {
+        display: none;
+        position: absolute;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+    }
+    .home-slider {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 700px;
+        .slide {
+            display: block;
+            position: relative;
+            width: 100%;
+            height: 700px;
+            .btn-video {
+                display: block;
+            }
+        }
+        .box-description {
+            z-index: 100;
+            position: relative;
+            width: 960px;
+            height: 220px;
+            top: 390px;
+            margin: 0 auto;
+            color: $white;
+            padding: 0 0 0 10px;
+
+
+            .text-title {
+                display: block;
+                width: 360px;
+                border-bottom: 1px solid $white;
+                padding: 0 0 10px 0;
+                font-size: 1.5em;
+                line-height: 1em;
+            }
+            p {
+                display: block;
+                width: 345px;
+                padding: 10px 0 0 0;
+                line-height: 1.5em;
+            }
+            .btn-trailer {
+                display: inline-block;
+                vertical-align: top;
+                color: $orange;
+                background: url('/static/images/home/icon-play.png') no-repeat right center;
+                padding: 10px 30px 10px 0;
+                cursor: pointer;
+            }
+            .btn-more_info {
+                display: inline-block;
+                vertical-align: top;
+                color: $orange;
+                //background: url('/static/images/home/icon-more_info.png') no-repeat right center;
+                padding: 10px 30px 10px 0;
+                cursor: pointer;
+                text-decoration: none;
+            }
+            .no-padding {
+                padding:0 !important;
+            }
+            .no-padding-bottom {
+                padding-bottom:0 !important;
+            }
+        }
+        .content-bg{
+            @include border-radius(5px);
+            behavior: url('/static/js/lib/PIE.htc');
+            background: url("/static/images/shadow-bis.png");
+            width:450px;
+            padding:15px;
+          }
+        .box-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            text-align: center;
+        }
+
+        .box-nextprev{
+            bottom: 28px;
+            height: 25px;
+            left: 0;
+            margin: 0 auto;
+            position: absolute;
+            width: 100%;
+            z-index: 1001;
+            .container {
+                position: relative;
+                width: 960px;
+                margin: 0 auto;
+                padding-left: 0;
+            }
+            .slidesjs-previous{
+                margin-left: 10px;
+            }
+            .slidesjs-next{
+                margin-left: 155px;
+            }
+            .slidesjs-navigation{
+                background-color: #CCC;
+            }
+        }
+
+        .box-pagination {
+            z-index: 1000;
+            position: absolute;
+            left: 0;
+            bottom: 65px;
+            height: 25px;
+            width: 100%;
+            margin: 0 auto;
+            .container {
+                position: relative;
+                width: 960px;
+                margin: 0 auto;
+                .slidesjs-pagination {
+                    position: relative;
+                    height: 25px;
+                    display: inline-block;
+                    height: 25px;
+                    left: 60px;
+                    padding: 5px 0 0 5px;
+                    background: $darkOpa8;
+                    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#C0000000', endColorstr='#C0000000');
+                    .slidesjs-pagination-item {
+                        position: relative;
+                        width: 12px;
+                        height: 20px;
+                        margin: 0 5px 0 0;
+                        a {
+                            display: block;
+                            width: 8px;
+                            height: 8px;
+                            border: 0;
+                            overflow: hidden;
+                            cursor: pointer;
+                            border-radius: 2px;
+                            background: $white;
+                        }
+                        a.active {
+                            background: $orange;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+aside.thumb.over {
+    height: 0;
+    position: relative;
+    top: -51px;
+}
+
+#weekly-shows {
+    @include background-image(linear-gradient($lightergrey, $middlegrey));
+    padding-top: 50px;
+    -pie-background: linear-gradient($lightergrey, $middlegrey);
+    behavior: url('/static/js/lib/PIE.htc');
+    position: relative;
+    //CREER UN GENERATE SLIDER AU LIEU D'UN GENERATE ARTICLE --> POUR NE PAS DEVOIR DUPLIQUER $ARTICLES...
+    .vignettes-small {
+        @include container(690px);
+        @include generate-vignette("classic", 4);        
+        .two_ligne {margin-top:101px !important;}
+    }
+    .vignettes-small-2 {
+        @include container(690px);
+        @include generate-vignette("classic", 4); 
+        .two_ligne {margin-top:101px !important;}
+    }
+
+    .tonight {
+        border: 2px solid $orange;
+    }
+    .tonight footer {
+        height: 170px !important;
+    }
+    .tonight-before {
+        background: $orange;
+        color: $white;
+        font-size: 13px;
+        font-family: $vag-rounded;
+        position: absolute;
+        text-align: center;
+        top: -30px;
+        left: 50%;
+        margin-left: -45px;
+        width: 90px;
+        line-height: 30px;
+        @include border-radius(20px 20px 0 0);
+        behavior: url('/static/js/lib/PIE.htc');
+    }
+    .nav {
+        .slidernav {
+            @include float(left);
+            .prev, .next {
+                display: inline-block;
+                width: 38px;
+                height: 38px;
+                background: url("/static/images/slider-bt.png") no-repeat;
+            }
+            .prev {
+                background-position: -1px -1px;
+                margin-right: 15px;
+            }
+            .next {
+                background-position: -40px -1px;
+                margin-left: 15px;
+            }
+            .square {
+                display: inline-block;
+                width: 8px;
+                height: 8px;
+                margin: 0 5px 15px 5px;
+                line-height: 38px;
+                background: url("/static/images/slider-bt.png") -1px -41px no-repeat;
+            }
+            .active {
+                background-position: -10px -41px;
+            }
+        }
+        .button {
+            @include float(right);
+            @include button-border-radius($orange, $orange, $white, 5px, 40px, auto, 0 16px);
+            margin-bottom: 40px;
+        }
+        .button-2 {
+            @include float(right);
+            @include button-border-radius($orange, $orange, $white, 5px, 40px, auto, 0 16px);
+            margin: 0px 5px 0 0;
+            top: -40px;
+        }
+    }
+    .box-concours {
+        width: 960px;
+        height: 90px;
+        margin-bottom: 48px;
+        padding-left: 116px;
+        div {
+            display:none;
+            position: relative;
+            width: 728px;
+            height: 90px;
+            margin: 0;
+            padding: 0;
+        }
+        .modele_vignette {
+            background: url("/static/images/avantages/6472_13_hab14_banner_betv_v1-250x250.gif") 50% 0 no-repeat;
+        }
+        .bifff {
+            background: url("/static/images/avantages/box-concours/bannerBIFFF.jpg") no-repeat;
+        }
+        .pjpmmp {
+            background: url("/static/images/avantages/box-concours/bannerPJPMMP.jpg") no-repeat;
+        }
+    }
+}
+.banner-beprivileges {
+    position: relative; 
+    width: 100%;
+    height: 90px;
+    margin-bottom: 48px;
+    text-align: center;
+}
+.home-link-100 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 50;
+}
+.home-small-slider-wrapper {
+    width: 695px;
+    margin-right: 10px;
+    display: inline-block;
+    vertical-align: top;
+    .slider {
+        position: relative;
+        z-index: 10;
+    }
+    .nav {
+        position: relative;
+        z-index: 50;
+    }
+    h3{
+        line-height: 40px;
+    }
+    article{
+        margin-top: 26px !important;
+    }
+}
+
+.home-right-column {
+    width: 250px;
+    display: inline-block;
+    vertical-align: top;
+    .home-beprivileges {
+        background: url("/static/images/home/bg-beprivileges.jpg") no-repeat;
+        margin-top: 23px;
+        position: relative;
+        height: 215px;
+    }
+    .home-highlight {
+        background: url("/static/images/home/bg-highlight.jpg") 50% 0 no-repeat;
+        margin-top: 17px;
+        padding: 23px 20px 20px 20px;
+        position: relative;
+        height: 250px;
+        .logo {
+            display: block;
+            position: relative;
+            margin-bottom: 19px;
+        }
+        .description {
+            font-size: 13px;
+            line-height: 20px;
+            font-family: $vag-rounded;
+            text-align: left;
+            color: $white;
+            font-weight: lighter;
+            margin-bottom: 12px;
+        }
+        a {
+            text-align: left;
+            color: $orange;
+            font-size: 18px;
+            font-weight: lighter;
+            text-decoration: none;
+        }
+    }
+    
+}
+
+.list-series {
+    background: #1a1a1a; //url("/static/images/home/bg-list-series.jpg") 50% 0 no-repeat;
+    padding-top: 30px;
+    position: relative;
+    header {
+        @include container(960px);
+        h3.offer {
+            color: $white;
+            display: inline-block;
+            vertical-align: top;
+            margin-top: 40px;
+        }
+        .home-offer-nav {
+            margin: 45px 45px 0 12px;
+            list-style-type: none;
+            display: inline-block;
+            vertical-align: top;
+            li {
+                display: inline-block;
+                vertical-align: top;
+                border-left: 1px solid $white;
+                padding: 0 12px;
+                a {
+                    display: inline-block;
+                    vertical-align: top;
+                    font-family: $american;
+                    font-size: 16px;
+                    color: $white;
+                    text-decoration: none;
+                }
+                a:hover {
+                    text-decoration: underline;
+                }
+            }
+            .plus {
+                padding: 0 0 0 12px;
+                position: relative;
+                a {
+                    background: url("/static/images/arrow-down-orange.png") right 50% no-repeat;
+                    padding-right: 18px;
+                }
+            }
+            .home-offer-subnav {
+                display: none;
+                position: absolute;
+                z-index: 1000;
+                left: -2px;
+                padding-top: 5px;
+                li {
+                    background: $betvgrey;
+                    padding: 12px 20px;
+                    display: block;
+                    border: 0px solid #fff;
+                    border-bottom: 1px solid $grey4d;
+                    a {
+                        display: block;
+                        background: none;
+                        text-decoration: none;
+                    }
+                }
+            }
+            .plus:hover .home-offer-subnav {
+                display: block;
+            }
+        }
+        .home-offer {
+            display: inline-block;
+            vertical-align: top;
+            float: right;
+            .offer-left {
+                display: inline-block;
+                vertical-align: top;
+            }
+            .offer-right {
+                display: inline-block;
+                vertical-align: top;
+            }
+            .price {
+                display: block;
+                margin-top: 12px;
+                font-size: 32px;
+                color: $white;
+                font-family: $american;
+            }
+            .cents {
+                font-size: 16px;
+                color: $white;
+                font-family: $american;
+            }
+            .month {
+                font-size: 16px;
+                color: $white;
+                font-family: $american;
+            }
+            .old-price{
+              text-decoration: line-through;
+              font-size:13px;
+              color:$white;
+              margin-top:10px;
+              display: block;
+            }
+            .button {
+                margin: 25px 0 0 10px;
+                @include button-border-radius($green, $orange, $white, 3px, 40px);
+                width: 100px;
+            }
+        }
+    }
+    .vignettes {
+        @include container(960px);
+        @include generate-vignette("classic", 3); 
+        .orange {
+              text-align: left;
+              color: #e85d10;
+              font-size: 18px;
+              font-weight: lighter;
+              text-decoration: none;
+              font-family: "vagrounded-thin", Arial, Helvetica, sans-serif;
+        }
+    }
+    .vignettes-2 {
+
+        article {
+            margin-top: 0px !important;
+        }
+       
+    }
+
+}
+
+.zoom-serie {
+    background: black url("/static/images/serie-tab-bgwide-helix.jpg") 50% 0 no-repeat;
+    .container {
+        @include container(980px);
+        height: 758px;
+        position: relative;
+        #ipad {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 521px;
+            height: 271px;
+            background: url("/static/images/serie-tab-ipad.png") no-repeat;
+        }
+        .titleh2 {
+            margin: 0;
+            font-size: $fs16px;
+            color: $white;
+            background: url("/static/images/shadow-bis.png");
+            font-family: $american;
+
+            display: inline-block; 
+            line-height: 40px; 
+            padding: 0 24px; 
+            @include border-radius(18px);
+            behavior: url('/static/js/lib/PIE.htc');
+            position: relative;
+            padding-top: 98px;
+            float: left;
+        }
+
+        div:nth-child(2){
+             @include border-radius(5px);
+            behavior: url('/static/js/lib/PIE.htc');          
+
+            color: $white;
+            font-size: $fs16px;
+            font-family: $font-secondary;
+            background: url("/static/images/shadow-bis.png");
+            padding: 35px 25px 25px 30px;
+            width: 470px;
+            position: absolute;
+            bottom: 29px;
+            line-height: 22px;
+            img {
+                margin-bottom: 22px;
+            }
+            .button {
+                margin: 24px 0 44px 0;
+                @include button-border-radius($orange, $orange, $white, 5px, 40px);
+            }
+            .tall {
+                font-size: $fs18px;
+                margin-bottom: 8px;
+            }
+            a {
+                color: #e00079;
+            }
+        }
+        div:nth-child(3) {
+            @include float(right);
+            text-align: center;
+            color: $white;
+            h2 {
+                margin-top: 65px;
+                margin-bottom: 24px;
+            }
+            p {
+                font-size: 18px;
+                font-family: $font-secondary;
+            }
+            .intro {
+                font-family: $font-secondary;
+                font-size: $fs28px;
+                line-height: 28px;
+                margin-bottom: 45px;
+            }
+            .price {
+                font-family: $american;
+                font-size: $fs50px;
+                .cents {
+                    font-size: 29px;
+                }
+                .month {
+                    font-size: 22px;
+                    font-family: $font-secondary;
+                }
+            }
+            .button {
+                margin: 18px 0 26px 0;
+                @include button-border-radius($green, $green, $white, 5px, 40px, 264px);
+            }
+        }
+    }
+}
+
+.most-rated-shows {
+    background: #222222 url("/static/images/radial-grey.jpg") 50% 0 no-repeat;
+    h2 {
+        text-align: center;
+        padding-top: 55px;
+        margin: 0;
+    }
+    div {
+        text-align: center;
+        @include container(980px);
+        @each $article in $list-article-serie-most-rated {
+            //Loop sur la variable $list-article-serie pour afficher le bon background des articles vignettes
+            $i: index($list-article-serie-most-rated, $article);
+            @include generate-articles($i, $article, false, 3, "default", 280px);
+        }
+        .button {
+            @include button-border-radius($orange, $orange, $white, 5px, 40px, 264px);
+            margin: 8px 0 24px 0;
+        }
+        article {
+            text-align: left;
+        }
+    }
+}
+
+.betv-go {
+    height: 710px;
+    background: white url("/static/images/bg-betv-go.png") repeat-x center bottom;
+    div.betv-go-content {
+        background: url("/static/images/betv-devices-v2.png") no-repeat 80% 75%;
+        position: relative;
+        @include container(980px);
+        height: 100%;
+        img {
+            @include float(left);
+            margin: 38px 34px 0 0;
+            vertical-align: middle;
+        }
+        p {
+            font-family: $american;
+            font-size: 2em;
+            line-height: 42px;
+            padding-top: 40px;
+            margin-bottom: 483px;
+            .button {
+                @include button-border-radius($green, $green, $white, 3px, 40px, 200px);
+                font-family: $font-secondary;
+                font-size: 24px;
+                position: absolute;
+                right: 75px;
+                top: 86px;
+            }
+        }
+    }
+}
+
+.soon {
+    background: #1e1e1e url("/static/images/bg-radial-grey.jpg") 50% 0 repeat-x;
+    h2 {
+        margin-top: 0;
+        padding-top: 50px;
+        text-align: center;
+        font-size: $fs32px;
+    }
+    div {
+        @include container(960px);
+        @each $article in $list-article-serie-soon {
+            $i: index($list-article-serie-soon, $article);
+            @include generate-articles($i, $article, true, 4, "wide", 450px);
+        }
+    }
+}
+
+.concours {
+    background: url("/static/images/bg-gradient-grey.jpg") 50% 0;
+    div {
+        @include container(960px);
+        img {
+            margin-top: 2px;
+            float: left;
+        }
+        div {
+            @include float(right);
+            width: 480px;
+            h2 {
+                font-family: $american;
+                font-size: $fs32px;
+                color: $black;
+                margin-top: 46px;
+                line-height: 1em;
+            }
+            img {
+                margin: 0 -10px 0 -24px;
+            }
+            p {
+                padding-top: 24px;
+                font-size: $fs16px;
+                line-height: 20px;
+                font-family: $font-secondary;
+                .button {
+                    margin-top: 15px;
+                    @include button-border-radius($orange, $orange, $white, 3px, 40px, 200px);
+                }
+            }
+            .form {
+                background: #ebebeb;
+                font-family: $american;
+                @include border-radius(5px);
+                behavior: url('/static/js/lib/PIE.htc');
+                position: relative;
+                padding: 20px;
+                p {
+                    margin: 0;
+                    padding: 0;
+                    margin-right: 40px;
+                    width: 200px;
+                    @include float(left);
+                    font-size: 16px;
+                    span {
+                        font-size: 17px;
+                        margin-bottom: 14px;
+                        display: inline-block;
+                    }
+                }
+                .customInput {
+                    width: 200px;
+                }
+                input {
+                    margin-top: 20px;
+                    @include border-radius(5px);
+                    behavior: url('/static/js/lib/PIE.htc');
+                    position: relative;
+                }
+            }
+        }
+    }
+}

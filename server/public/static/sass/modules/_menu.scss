@@ -1,0 +1,153 @@
+header {
+    section {
+        height: 50px; 
+        position: relative;
+        div:first-child,
+        div:last-child {
+            font-family: 'Helvetica neue'; 
+            color: $lightgrey; 
+            line-height: 50px; 
+            vertical-align: middle; 
+        }
+
+        div:first-child {
+            @include float(left);
+            a { 
+                font-size: $fs13px; 
+                color: $lightgrey; 
+                text-decoration: none; 
+                line-height: 50px; 
+            }
+        }
+        div:last-child {
+            @include float(right);
+        }
+
+        #searchbox { 
+            position: absolute; 
+            left: 300px; 
+            line-height: 50px; 
+            input { 
+                background: #333333; 
+                border: none; 
+                @include border-radius(5px); 
+                behavior: url('/static/js/lib/PIE.htc');
+                position: relative;
+                line-height: 40px; 
+                color: $white; 
+                padding: 0 0 0 15px; 
+                width: 318px; 
+                .sprites {
+                    margin: 0 0 0 -30px; 
+                }
+            }
+        }
+    }
+    nav {
+        background: $black;
+    }
+}
+
+
+#headerMenu { 
+    height: 77px; 
+    line-height: 69px; 
+    img { 
+        @include float(left);
+        padding-top: 26px; 
+    }
+    .menu-home { 
+        width: 40px; 
+    }
+    ul { 
+        margin: 0 0 0 12px; 
+        padding-top: 10px;
+        @include float(left);
+    }
+    li { 
+        list-style-type: none;
+        @include float(left);
+        font-size: $fs18px; 
+        color: $white; 
+        .abonner {
+            @include button-border-radius($green, $orange, $white, 5px, 40px, 110px);
+            margin-left: 24px;
+        }
+        a {
+            @include button-border-radius(none, $orange, $white, 5px, 40px, auto);
+            line-height: 2px!important;
+        }
+        .sprites { 
+            padding:0; 
+        }
+        .home:hover { 
+            background: url('/static/images/spritesheet.png') -1px -22px no-repeat;
+        }
+
+    }
+    li.active, 
+    li.hasHoverMenu:hover {
+    	@include border-top-radius(5px);
+    	background: url('/static/images/bg-hovermenu-bt.jpg');
+        behavior: url('/static/js/lib/PIE.htc');
+        position: relative;
+    	a {
+    		color: $orange;
+            &:hover {
+                background: none;
+            }
+    	}
+    }
+}
+
+#hovermenu { 
+    display:none;
+	@include container(980px);
+	@include border-radius(5px); 
+	margin-top:2px;
+	padding: 45px 18px;
+	width: 100%;
+	height: 470px;
+	background: $white url('/static/images/bg-hovermenu.jpg') no-repeat;
+	position: absolute; 
+	ul{
+		float: left;
+		li {
+			&.title {
+				font-family: $american;
+				font-size: $fs26px;
+				padding-bottom: 20px;
+			}
+			
+			a {
+				font-family: $font-secondary;
+				font-size: $fs16px;
+				line-height: 28px;
+				text-decoration: none;
+				&:hover, 
+				&.active{
+					color: $orange;
+				}
+			}
+		}
+        border-right: 1px solid #c9c9ca;
+        padding-right: 38px;
+        min-height: 400px;
+
+	}
+	.vignettes {
+        h2 {
+            font-size: $fs26px;
+            font-family: $american;
+            margin: 0 0 18px 0;
+            color: $black;
+        }
+		width: 720px;
+        margin-left: 20px;
+		float: left;
+		@each $article in $list-article-serie { //Loop sur la variable $list-article-serie pour afficher le bon background des articles vignettes
+            $i: index($list-article-serie, $article);
+            @include generate-articles($i, $article, true, 4, 'hovermenu',450px);
+        }
+	}
+}

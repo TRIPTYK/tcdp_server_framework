@@ -1,0 +1,511 @@
+/* On doit ajouter cette fonction lorsque compass utilise les nombres */
+@import "compass/functions";
+@mixin button-border-radius($color, $hoverColor, $font-color, $radius, $height:"40px", $width:"40px", $padding:"0"){
+    background: $color;
+    color: $font-color;
+    font-family: $font-secondary;
+    @include border-radius($radius);
+    behavior: url('/static/js/lib/PIE.htc');
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    padding: 0 0.5em;
+    line-height: $height;
+    height: $height;
+    width: $width;
+    padding: $padding;
+    position: relative;
+    &:hover{
+         background: $hoverColor;
+    }
+    cursor: pointer;
+}
+
+@mixin thumb-bt($color, $arrow, $font-color){
+    background: $color url('/static/images/thumb-'+$arrow+'.png') 50% 24px no-repeat;
+    color: $font-color;
+    font-family: $font-primary;
+    @include border-radius(5px 5px 0 0);
+    behavior: url('/static/js/lib/PIE.htc');
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    height: 51px;
+    width: 161px;
+    margin: 2px 0 0 0;
+    z-index: 900;
+}
+
+@mixin thumb-bt-bg($color, $arrow, $bg, $font-color){
+    @include background(url('/static/images/thumb-'+$arrow+'.png') 50% 24px no-repeat, $color url('/static/images/bg-thumb-'+$bg+'.png'));
+    color: $font-color;
+    font-family: $font-primary;
+    @include border-radius(5px 5px 0 0);
+    behavior: url('/static/js/lib/PIE.htc');
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    height: 51px;
+    width: 161px;
+    margin: 2px 0 0 0;
+    z-index: 900;
+}
+
+@mixin a-absolute {
+    background: transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1000;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+@mixin generate-vignette($mode, $col, $gutter: 28px){
+    $marginTop : 50px;
+    $TBoxMarginTop: 170px;
+    $height: 422px;
+    $footerHeight: 172px;
+    $divHeight: 80px;
+    $lineHeight: 81px;
+
+    @if $mode =='sport' {
+        $TBoxMarginTop : 154px;
+        $height: 406px;
+    }
+
+    @if $mode =='mainMenu' {
+        $marginTop: 0;
+        $height: 324px;
+    }
+
+    @if $mode == 'teaser' {
+        $height: 354px;
+        $footerHeight: 104px;
+    }
+
+    @if $mode == 'menuHeader' {
+        $marginTop : 0;
+        $TBoxMarginTop: 130px;
+        $height: 352px;
+        $footerHeight: 142px;
+    }
+
+    article {
+        a {
+            text-decoration: none;
+        }
+        a.absolute {
+            @include a-absolute;
+        }
+        position: relative;
+        margin-bottom: $gutter;
+        margin-top: $marginTop;
+        @include border-radius(5px);
+        overflow: hidden;
+        behavior: url('/static/js/lib/PIE.htc');
+        height: $height;
+        @include span($col of 12);
+        &:last-child {
+            @include span($col of 12 last);
+        }
+        .bg-menu {
+            margin-top: -18px;
+            border-radius: none;
+        }
+        .vignette-bg{
+            position: absolute;
+            top: 0;
+            z-index: 5;
+        }
+        .title-box {
+            background: #fff;
+            text-align: center;
+            margin-top: $TBoxMarginTop;
+            line-height: $lineHeight;
+            font-size: 16px;
+            display: block;
+            width: 101%;
+            position: relative;
+            z-index: 20;
+            height: $divHeight;
+            text-decoration: none;
+            font-family: $american ;
+            color : #444;
+        }
+        .multiline {
+            line-height: 16px;
+            padding-top: 26px;
+        }
+        .multiline-third {
+            padding-top : 16px;
+            line-height: 16px;
+        }
+        footer {
+            position: absolute;
+            z-index: 20;
+            bottom: 0;
+            text-align: left;
+            background: #000; //url('/static/images/shadow-bis.png');
+            padding: 20px 0 20px 20px;
+            font-weight:lighter;
+            color: $white;
+            font-size: 22px;
+            line-height: 24px;
+            border-radius: 0 0 5px 5px;
+            behavior: url('/static/js/lib/PIE.htc');
+            width: 100%;
+            height: $footerHeight;
+
+            span {
+                width: 100%;
+                text-align: left;
+                display: inline-block;
+            }
+
+            .time {
+                font-size: 16px;
+                font-weight:lighter;
+            }
+            .episode_grand_texte{
+               padding-top: 5px !important;
+            }
+            .episode {
+                color: $lightgrey;
+                font-size: 15px;
+                line-height: 18px;
+                padding-top: 12px;
+                padding-bottom: 20px;
+                display: inline-block;
+                font-weight:lighter;
+            }
+
+            .episode {
+                height: 40px;
+            }
+
+            a {
+                text-align: left;
+                color: $orange;
+                font-size: 18px;
+                font-weight:lighter;
+                text-decoration: none;
+                font-family: $vag-rounded-thin;
+            }
+
+            &.vignettes-small-teaser {
+                padding: 8px 0 0 20px;
+                .episode {
+                    font-size: 15px;
+                }
+                .teaser-link {
+                    font-size: 18px;
+                    color: $orange;
+                }
+            }
+
+            .pass{
+                    position:absolute;
+                    bottom:0;
+                    left:0;
+                    text-align: center;
+                    font-family:$font-primary;
+                    padding-left:10px;
+                    font-size:12px;
+                    color:$lightgrey;
+                    background:$bg-table url('/static/images/sport/icon-daypass.png') 8px center no-repeat;
+                    line-height:35px;
+                    @include border-radius(0 0 5px 5px);
+                    behavior: url('/static/js/lib/PIE.htc');
+                    .daypass{
+                    text-transform: uppercase;
+                    color:$bluepass;
+                    font-size:12px;
+                    border-bottom:1px solid $bluepass;
+
+                    }
+                }
+        }
+
+    }
+}
+
+@mixin generate-articles($i, $article, $hasFooter, $divider:3, $mode:'thin',$height:280px,$footer-align:left,$pass:'false'){
+    article:nth-child(#{$i}) {
+        position: relative;
+        margin-bottom: 28px;
+        margin-top: 50px;
+        @include border-radius(5px);
+        overflow: hidden;
+        behavior: url('/static/js/lib/PIE.htc');
+
+        height:$height;
+        // @if $hasFooter {
+        //     height: 450px;
+        // } @else {
+        //     height: 280px;
+        // }
+
+        @if $mode =='hovermenu' {
+            height: 342px;
+            margin-top: 0;
+        }
+
+        // background: url($article) center top no-repeat;
+
+        @include span($divider of 12);
+        &:last-child {
+            @include span($divider of 12 last);
+        }
+
+        header {
+            color: $white;
+            background: url('/static/images/shadow-bis.png');
+            font-family: $american;
+
+            @if $mode =='noHeader' {
+                display: none;
+            } @else {
+                display: inline-block;
+            }
+
+            margin-top: 16px;
+            line-height: 20px;
+            padding: 10px 24px;
+            border-radius: 0 18px 18px 0;
+            behavior: url('/static/js/lib/PIE.htc');
+            position: absolute;
+            z-index: 20;
+        }
+        .mini {
+            font-size: 15px;
+        }
+        .title-box {
+             @if $mode == 'thinsmall' {
+                    height: 84px;
+                }@else {
+                   height:81px;
+                }
+
+            line-height: 81px;
+            font-size: 16px;
+            text-align: center;
+            background: $white;
+        }
+
+        .title-box-multiline {
+            line-height: 16px;
+            padding-top: 26px;
+        }
+        .vignette-logo,
+        .title-box {
+            background: #fff;
+            text-align: center;
+            @if $mode == 'small' {
+               margin-top: 179px;
+            }@else if $mode == 'share' {
+                    margin-top: 198px;
+            }@else if $mode == 'noHeader' {
+                    margin-top: 178px;
+            } @else {
+              margin-top: 201px;
+            }
+            display: block;
+            width: 101%;
+            position: relative;
+            z-index: 20;
+            height: 80px;
+        }
+        .vignette-bg{
+            position: absolute;
+            top: 0;
+            z-index: 5;
+        }
+
+
+        .logo {
+            margin: 8px 0 0 0;
+            width: initial;
+        }
+
+        a.absolute {
+            @include a-absolute;
+        }
+
+        @if $hasFooter {
+            footer {
+                position: absolute;
+                z-index: 20;
+                bottom: 0;
+                text-align: $footer-align;
+                background: url('/static/images/shadow-bis.png');
+
+                padding: 20px 0 20px 20px;
+                font-weight:lighter;
+                color: $white;
+                font-size: $fs22px;
+                line-height: 24px;
+                border-radius: 0 0 5px 5px;
+                behavior: url('/static/js/lib/PIE.htc');
+                @if $mode == 'wide' {
+                    width: 100%;
+                     height: 180px;
+                } @else if $mode == 'small' {
+                    width: 100%;
+                     height: 172px;
+                }@else if $mode == 'thinsmall' {
+                    width: 100%;
+                     height: 139px;
+                }@else if $mode == 'smaller' {
+                    width: 100%;
+                    height: 85px;
+                }@else if $mode == 'share' {
+                    width: 100%;
+                    height: 166px;
+                }@else if $mode == 'teaser' {
+                    width: 100%;
+                    height: 104px;
+                }@else {
+                    width: 100%;
+                     height: 171px;
+                }
+
+                span {
+                    width: 100%;
+                    text-align: left;
+                    display: inline-block;
+                }
+
+                .btn-popupFiche-span {
+                    font-size: 18px;
+                }
+
+                .time {
+                    font-size: 16px;
+                    font-weight:lighter;
+                }
+                .episode_grand_texte{
+                   padding-top: 5px !important;
+                }
+                .episode,
+                .cast {
+                    color: $lightgrey;
+                    font-size: 15px;
+                    line-height: 18px;
+                    padding-top: 12px;
+                    display: inline-block;
+                    font-weight:lighter;
+                }
+                .chaine_mini {
+                    line-height: 22px;
+                }
+                .cast_mini {
+                    font-size: 14px;
+                    line-height: 16px;
+                    padding-top: 2px;
+                }
+                .episode {
+                    @if $pass == 'false' {
+                        height: 57px;
+                    } @else if $pass == 'daypass'{
+                        height: 40px;
+                    }
+                }
+
+                .pass{
+                    position:absolute;
+                    bottom:0;
+                    left:0;
+                    text-align: center;
+                    font-family:$font-primary;
+                    padding-left:10px;
+                    font-size:12px;
+                    color:$lightgrey;
+                    background:$bg-table url('/static/images/sport/icon-daypass.png') 8px center no-repeat;
+                    line-height:35px;
+                    @include border-radius(0 0 5px 5px);
+                    behavior: url('/static/js/lib/PIE.htc');
+                    .daypass{
+                    text-transform: uppercase;
+                    color:$bluepass;
+                    font-size:12px;
+                    border-bottom:1px solid $bluepass;
+
+                    }
+                }
+                a {
+                    text-align: left;
+                    color: $orange;
+                    font-size: 18px;
+                    font-weight:lighter;
+                    text-decoration: none;
+                    font-family: $vag-rounded-thin;
+                }
+
+                .button {
+                    margin: 24px 0 32px 0;
+                    @include button-border-radius($orange, $orange, $white, 5px, 40px, 200px);
+                }
+                &.vignettes-small-teaser {
+                    padding: 8px 0 0 20px;
+                    .episode {
+                        font-size: 15px;
+                    }
+                    .teaser-link {
+                        font-size: 18px;
+                        color: $orange;
+                    }
+                }
+            }
+        }
+
+        &.long-text .button {
+            margin-top: 6px;
+        }
+    }
+}
+@mixin border-offre($color){
+    border-left : solid 1px $color;
+    border-right : solid 1px $color;
+}
+
+
+/* MIXIN FOR FUNNEL */
+@mixin funnel-white-box($height, $mb: "15px", $padding: "28px"){
+    min-height: $height;
+    @include border-radius(5px);
+    behavior: url('/static/js/lib/PIE.htc');
+    position: relative;
+    background: #FFF;
+    margin-bottom: $mb;
+    padding: $padding;
+}
+
+@mixin funnel-input($br, $width){
+    width: $width;
+    border: 0;
+    font-size: 16px;
+    color: $black;
+    @if $br == 'allcorner'{
+        @include border-radius(4px);
+        padding: 13px;
+    }
+    @if $br == 'leftcorner'{
+        @include border-radius(4px 0 0 4px);
+        padding: 13px 0 13px 13px;
+    }
+
+    behavior: url('/static/js/lib/PIE.htc');
+    position: relative;
+    background: #e5e5e5;
+}
+
+// betv gradient
+@mixin betvGradient($size: 2px) {
+    background: url('/static/images/gradient-betv.jpg');
+    height: $size;
+    max-width: 100%;
+}

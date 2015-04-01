@@ -14,17 +14,24 @@
   "author": "The Crazy Digital Painter",
   "license": "MIT",
   "devDependencies": {
+    "grunt": "~0.4.4",
+    "grunt-sass": "^0.18.0",
+    "grunt-contrib-copy": "~0.5.0",
+    "grunt-contrib-watch": "~0.6.1",
+    "grunt-contrib-clean": "^0.5.0",
+    "matchdep": "~0.3.0"
+  },
+  "dependencies": {
     "async": "^0.9.0",
     "config": "^1.12.0",
     "express": "^4.12.3",
+    "glob": "^5.0.3",
+    "grunt-timer": "^0.6.0",
     "handlebars": "^3.0.1",
     "hbs": "^3.0.1",
     "lodash": "^3.5.0",
     "morgan": "^1.5.2",
+    "node-minify": "^1.0.2",
     "walk": "^2.3.9"
-  },
-  "dependencies": {
-    "glob": "^5.0.3",
-    "node-minify": "^1.0.2"
   }
 }

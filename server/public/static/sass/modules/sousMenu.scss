@@ -1,0 +1,95 @@
+// @import "compass";
+@import "compass/css3/border-radius";
+@import "compass/utilities/general/float";
+@import "compass/css3/images";
+@import "compass/css3";
+@import "compass/utilities/general/clearfix";
+@import "susy";
+
+@import "variables";
+@import "mixins";
+@import "layout";
+
+nav#sousMenu {
+    position: relative;
+    width: 100%;
+    background: url('/static/images/floating-menu-bg.jpg') no-repeat center bottom; 
+    background-size: 100%; 
+    ul {
+        @include container(960px);
+        li { 
+            @include float(left);
+            line-height: 50px; 
+            padding: 0 25px; 
+            a { 
+                color: $white; 
+                text-decoration: none; 
+                font-family: $vag-rounded-thin;
+
+            }
+            a:hover{
+                    color: $orange; 
+                }
+            &.active {
+                a {
+                    color: $orange;
+                }  
+            }
+        }
+    } 
+}
+
+nav#subMenuOption {
+    position: relative;
+    width: 100%;
+    border-bottom:10px solid $white;
+    background: url('/static/images/rainbow.jpg') center bottom repeat-y; 
+    background-size: 100%;
+    
+   
+    ul {
+        @include container(960px);
+        li { 
+            @include inline-block;   
+            vertical-align: middle;         
+            margin-right:7px;
+            
+            a { 
+                @include inline-block;   
+                vertical-align: middle;         
+                @include border-radius(5px 5px 0 0);
+                behavior: url('/static/js/lib/PIE.htc');            
+                position: relative;
+                color: $white; 
+                font-size:16px;
+                font-family:$font-secondary;
+                line-height:25px;
+                text-decoration: none; 
+                padding:20px 5px;
+                height: 80px; 
+                width:130px;
+                background:  url('/static/images/shadow.png');
+                text-align: center;
+
+            }
+            a:hover{
+                    color: $orange; 
+                    background: $white;
+                }
+            .active { 
+                color: $orange; 
+                 background: $white;
+            }
+        }
+        .last{
+                margin:0;
+            }    
+    } 
+}
+nav#subMenuOption.alternate{
+         border-bottom:2px solid $white;
+         border-top:10px solid $white;
+         a{
+             @include border-radius(0);
+         }
+    }

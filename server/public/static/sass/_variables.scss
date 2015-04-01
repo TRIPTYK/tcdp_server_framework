@@ -1,0 +1,142 @@
+$betvgrey       : #1f1f1f;
+$black		    : #000000;
+$lightgray      : #819090;
+$gray           : #708284;
+$lightergrey	: #e0e0e0;
+$lightgrey      : #999999;
+$mediumgray     : #536870;
+$middlegrey	  	: #d3d3d3;
+$darkgray       : #475B62;
+$nearDark	    : #7d7d7d;
+$nearblack		: #1b282f;
+$darkblue       : #0A2933;
+$darkerblue     : #042029;
+$paleryellow    : #FCF4DC;
+$paleyellow     : #EAE3CB;
+$pastel-blue	: #6ef1e7;
+$orange         : #e85d10;
+$pink           : #ff008a;
+$green          : #95bc0d;
+$white	    	: #ffffff;
+$grey	      	: #d8d8d8;
+$greyBorder	  	: #afb0b0;
+$dark 	    	: #313131;
+$greyC 	    	: #cccccc;
+$bluepass		: #37a8db;
+$darkbluepass	: #0c3e55;
+$purple         : #2c2376;
+
+/* color magritte 2015 */
+$mg-blue-dk  : #222c56;
+$mg-blue-lt  : #245eaa;
+$mg-grey     : #3c3c3b;
+
+/* offer colours */
+$deepBlue		  :#211b68;
+$deepPurple		:#681b39; /* =) */
+$deepGreen		:#1d5416;
+/* Color product */
+$bluefb         : #213777;
+$bluefb-light	: #3a5694;
+$bluetw         : #00aced;
+$orangeBG       : #feece8;
+$greenBeTv      : #a2c01d;
+
+
+
+/* Nuance de gris */
+$grey4d	    	: #4d4d4d;
+$grey18	    	: #181818;
+$greyc9       	: #c9c9c9;
+$grey666	    	: #666;
+$greye6	    	: #e6e6e6;
+$greye5	    	: #e5e5e5;
+$grey9	    	: #999999;
+$greyA	    	: #aaaaaa;
+$greyc	    	: #cccccc;
+$greyE	    	: #eeeeee;
+$greyf5	    	: #f5f5f5;
+$grey1a	    	: #1a1a1a;
+$greyf2	    	: #f2f2f2;
+$greyBorder  	: #8d8680;
+$greyBox      : #b2b2b2;
+$grey3        : #333333;
+
+
+/* Noir/gris transparent */
+$darkOpa2       : rgba(0,0,0,0.2);
+$darkOpa6       : rgba(0,0,0,0.6);
+$darkOpa8       : rgba(0,0,0,0.8);
+$darkOpa9       : rgba(0,0,0,0.9);
+$whiteOpa2      : rgba(255,255,255,0.2);
+
+
+/* page offre */
+$grey-bg-offre	: #eaeaea;
+$bg-table       : #262626;
+
+// $font-primary : Arial, Helvetica, sans-serif;
+$myriad : 'Myriad Pro', Myriad, Helvetica, sans-serif;
+$american : 'american', Courier, 'Courier New';
+// $vag-rounded : 'Helvetica-rounded', Arial, Helvetica, sans-serif;
+$museo : 'museo', Arial, Helvetica, sans-serif;
+$museo700 : 'museo-700', Arial, Helvetica, sans-serif;
+$vag-rounded :'vagrounded-light', Arial, Helvetica, sans-serif;
+$vag-rounded-thin :'vagrounded-thin', Arial, Helvetica, sans-serif;
+$vag-rounded-bold :'vagrounded-bold', Arial, Helvetica, sans-serif;
+$font-primary : 'vagrounded-light', Arial, Helvetica, sans-serif;
+$font-secondary : 'vagrounded-thin', Arial, Helvetica, sans-serif;
+
+//Font size
+
+$fs10px : 0.4em;
+$fs11px : 0.6em;
+$fs13px : 0.8em;
+$fs14px : 0.9em;
+$fs16px : 1em;
+$fs17px : 1.05em;
+$fs18px : 1.1em;
+$fs20px : 1.25em;
+$fs22px : 1.4em;
+$fs24px : 1.5em;
+$fs26px : 1.6em;
+$fs28px : 1.75em;
+$fs29px : 1.8em;
+$fs32px : 2em;
+$fs34px : 2.2em;
+$fs38px : 2.35em;
+$fs45px : 2.5em;
+$fs50px : 3.1em;
+
+$list-article-serie : "/static/images/tabs/s36_serie_cette-semaine_helix.jpg", "/static/images/tabs/s36_nos-programmes_helix.jpg", "/static/images/tabs/s36_nos-programmes_no-pain-no-gain.jpg", "/static/images/tabs/s36_nos-programmes_populaire.jpg";
+$list-article-serie-most-rated : "/static/images/tabs/s36_serie_helix.jpg", "/static/images/tabs/s36_serie_coup_house-of-cards.jpg", "/static/images/tabs/s36_serie_true-blood.jpg", "/static/images/tabs/s36_serie_coup_masters-of-sex.jpg";
+$list-article-serie-soon : "/static/images/tabs/s36_serie_prochainement_true-detective.jpg", "/static/images/tabs/s36_serie_prochainement_the-big-c.jpg", "/static/images/tabs/s36_serie_prochainement_homeland.jpg";
+$list-article-home-tonight : "/static/images/sliders/tonight/slide_majordome.jpg", "/static/images/sliders/tonight/slide_arsenal.jpg", "/static/images/sliders/tonight/slide_diva.jpg";
+$list-article-home-tonight-2 :  "/static/images/sliders/tonight/football-jupiler-league.jpg", "/static/images/sliders/tonight/captain-america.jpg", "/static/images/sliders/tonight/mad-men.jpg";
+
+$list-article-list-series-1 : "/static/images/serie-tab-bg_offre_populaire.jpg", "/static/images/serie-tab-bg_offre_turbo.jpg", "/static/images/serie-tab-bg_offre_chemin.jpg", "/static/images/serie-tab-bg_offre_bad.jpg";
+$list-article-list-series-2 : "/static/images/serie-tab-bg_offre_diana.jpg", "/static/images/serie-tab-bg_offre_salut.jpg", "/static/images/serie-tab-bg_offre_tendresse.jpg", "/static/images/serie-tab-bg_offre_allemagne.jpg";
+$list-article-list-series-3 : "/static/images/serie-tab-bg-dexter.jpg", "/static/images/serie-tab-bg-the-mentalist.jpg", "/static/images/serie-tab-bg-mad-men.jpg", "/static/images/serie-tab-bg-game-of-thrones.jpg";
+
+
+$list-article-sport :  "/static/images/sport/sport-tab-bg-equitation.jpg", "/static/images/sport/sport-tab-bg-golf.jpg", "/static/images/sport/sport-tab-bg-formule1.jpg";
+$list-article-sport-highlights :  "/static/images/sport/sport-tab-bg-equitation.jpg", "/static/images/sport/sport-tab-bg-golf.jpg", "/static/images/sport/sport-tab-bg-formule1.jpg";
+
+$list-article-list-event :  "/static/images/sliders/tonight/football-jupiler-league.jpg", "/static/images/sliders/tonight/captain-america.jpg", "/static/images/sliders/tonight/mad-men.jpg";
+
+$list-article-entertainment-week: "/static/images/divertissement/divertissement-tab-bg-degroodt.jpg", "/static/images/divertissement/divertissement-tab-bg-petit-journal.jpg", "/static/images/divertissement/divertissement-tab-bg-degroodt-copie.jpg","/static/images/divertissement/divertissement-tab-bg-petit-journal-copie.jpg";
+$list-article-entertainment :  "/static/images/divertissement/s36_films-betv_thor.jpg","/static/images/divertissement/s36_films-betv_insidious.jpg","/static/images/divertissement/s36_films-betv_gatsby.jpg","/static/images/divertissement/divertissement-tab-bg-wadjda-copy.jpg","/static/images/divertissement/divertissement-tab-bg-schtroumpfs2-copy.jpg","/static/images/divertissement/divertissement-tab-bg-wolverine-copy.jpg";
+
+
+$list-article-canal : "/static/images/canal/tab-bg-degroodt.jpg","/static/images/canal/tab-bg-petit-journal.jpg","/static/images/canal/tab-bg-guignols.jpg","/static/images/canal/tab-bg-zapping.jpg";
+
+
+$list-article-documentaire : "/static/images/sliders/documentaire/how-its-done.png", "/static/images/sliders/documentaire/echappees-belles.png", "/static/images/sliders/documentaire/jfk.png";
+$list-article-documentaire-2 : "/static/images/sliders/documentaire/hitler.png", "/static/images/sliders/documentaire/vietnam.png", "/static/images/sliders/documentaire/peche.png";
+
+
+$list-article-film : "/static/images/film/tab-bg-elysium.jpg","/static/images/film/tab-bg-this-is-the-end.jpg","/static/images/film/tab-bg-captain-america-2.jpg","/static/images/film/tab-bg-schtroumpfs-2.jpg";
+
+$list-article-concours : "/static/images/avantages/slider-concours/image-iron_man_3.jpg","/static/images/avantages/slider-concours/image-turbo.jpg","/static/images/avantages/slider-concours/image-mezzo.jpg";
+
+$default-border-radius : 10px;

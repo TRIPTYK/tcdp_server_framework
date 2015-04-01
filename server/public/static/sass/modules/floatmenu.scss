@@ -1,0 +1,31 @@
+@import "susy";
+@import "compass/utilities/general/float";
+@import "variables";
+
+nav#subMenu {
+    position: absolute;
+    width: 100%;
+    top: 704px;
+    z-index: 10000;
+    background: url('/static/images/floating-menu-bg.jpg') center bottom no-repeat; 
+    background-size: cover; 
+    ul {
+        @include container(960px);
+        li { 
+            @include float(left);
+            line-height: 60px; 
+            padding: 0 33px; 
+            a { 
+                color: $white; 
+                text-decoration: none; 
+
+            }
+            a:hover{
+                    color: $orange; 
+                }
+            .active { 
+                color: $orange; 
+            }
+        }    
+    } 
+}

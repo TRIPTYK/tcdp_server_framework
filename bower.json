@@ -1,0 +1,30 @@
+{
+  "name": "tcdp_server_framework",
+  "version": "0.0.1",
+  "homepage": "https://github.com/TheCrazyDigitalPainter/tcdp_server_framework",
+  "authors": [
+    "Gilles Bertrand <gilles@triptyk.eu>"
+  ],
+  "description": "bower components for tcdp functionning",
+  "keywords": [
+    "EXPRESS",
+    "TRIPTYK"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "modernizr": "~2.8.3",
+    "selectivizr": "~1.0.2",
+    "jquery": "1",
+    "css3pie": "*",
+    "susy": "~2.2.2",
+    "compass-mixins": "~1.0.2"
+  }
+}

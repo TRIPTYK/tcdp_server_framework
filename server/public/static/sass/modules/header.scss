@@ -1,0 +1,384 @@
+@import "compass/utilities/general/float";
+@import "compass/css3/border-radius";
+@import "variables";
+@import "mixins";
+@import "susy";
+
+header {
+    section {
+        height: 50px; 
+        position: relative;
+        div:first-child,
+        div:last-child {
+            font-family: $font-primary; 
+            color: $lightgrey; 
+            line-height: 50px; 
+            vertical-align: middle; 
+            font-size: $fs13px; 
+        }
+
+        div:first-child {
+            @include float(left);
+            a { 
+                color: $lightgrey; 
+                text-decoration: none; 
+                line-height: 50px; 
+            }
+        }
+        div:last-child {
+            a { 
+                color: $lightgrey; 
+                text-decoration: none; 
+                line-height: 50px; 
+            }
+            @include float(right);
+            position: relative;
+            .sprites{
+                position: relative;
+                top: 5px;
+            }
+            .fb{
+                margin-left: 10px;
+            }
+        }
+
+        #searchbox { 
+            position: absolute; 
+            left: 300px; 
+            line-height: 50px; 
+            input { 
+                background: #333333; 
+                border: none; 
+                @include border-radius(5px); 
+                behavior: url('/static/js/lib/PIE.htc');
+                position: relative;
+                color: $white; 
+                padding: 8px 40px 8px 15px; 
+                width: 318px; 
+            }
+            .sprites {
+                position: absolute;
+                top: 18px;
+                right: 12px;
+            }
+        }
+    }
+    nav {
+        background: $black;
+    }
+}
+
+#headerMenu { 
+    height: 77px; 
+    line-height: 69px; 
+    position: relative;
+    img { 
+        @include float(left);
+        padding-top: 18px; 
+    }
+    .bg-menu{
+        margin-top:-18px;
+        @include border-radius(5px);
+        behavior: url('/static/js/lib/PIE.htc');
+        
+        
+    }
+    img.clas-col-img {
+        padding: 0;
+        margin: 0 0 20px 0;
+    }
+    .clas-col-content-centered img.clas-col-img {
+        margin-bottom: 18px;
+    }
+    
+    .headerMenu-menu { 
+        margin: 0 0 0 12px; 
+        padding-top: 10px;
+        width: 853px;
+        @include float(left);
+    }
+    .headerMenu-list { 
+        list-style-type: none;
+        @include float(left);
+        font-size: $fs16px; 
+        color: $white; 
+        padding: 0 2px;
+        .menu-home {
+            @include button-border-radius(none, $orange, $white, 5px, 40px, auto);
+            behavior: url('/static/js/lib/PIE.htc');
+            padding: 0 12px;
+            &.active{background-color: $orange;color:$white}
+        }
+        .abonner {
+            @include button-border-radius($green, $orange, $white, 5px, 40px, 110px);
+             behavior: url('/static/js/lib/PIE.htc');
+            margin-left: 20px;
+        }
+        .headerMenu-lien {
+            @include button-border-radius(none, $orange, $white, 5px, 40px, auto);
+             behavior: url('/static/js/lib/PIE.htc');
+            padding: 0 10px;
+            &.active{background-color: $orange;color:$white}
+        }
+        .sprites { 
+            padding:0; 
+        }
+        .home:hover { 
+            background: url('/static/images/spritesheet.png') -1px -22px no-repeat;  
+        }
+        &:last-child{
+            @include float(right);
+        }
+    }
+.full-link{
+  display:block;
+  width:100%;
+  height:100%;
+ 
+  position: absolute;
+  z-index:1000;
+}
+    li.active, 
+    li.hasHoverMenu:hover {
+    	@include border-top-radius(5px);
+    	background: url('/static/images/bg-hovermenu-bt.jpg');
+        behavior: url('/static/js/lib/PIE.htc');
+        // position: relative;
+    	a {
+            &.active,
+            &:hover {
+                background: none;
+            }
+    	}
+    }
+}
+
+.hovermenu { 
+   
+    display:none;
+	@include container(980px);
+	@include border-radius(5px);
+    behavior: url('/static/js/lib/PIE.htc'); 
+	margin-top:2px;
+	padding: 45px 0 45px 18px;
+	width: 100%;
+	height: 470px;
+	background: $white url('/static/images/bg-hovermenu.jpg') no-repeat;
+	position: absolute; 
+    top: 77px;
+    left: 0;
+    z-index: 11000;
+    .btn-discover_program {
+        position: absolute;
+        height: 20px;
+        line-height: 20px;
+        top: 50px;
+        right: 20px;
+        color:$orange;
+    }
+	ul{
+        line-height: 20px;
+		float: left;
+        width: 190px;
+        margin-right: 20px;
+		li {
+      margin:7px 0;
+			&.title {
+                color: $black;
+				font-family: $american;
+				font-size: $fs26px;
+				padding-bottom: 20px;
+        line-height:28px;
+			}
+			
+			a {
+                color: $mediumgray;
+				font-family: $font-secondary;
+				font-size: $fs16px;
+				line-height: 20px;
+				text-decoration: none;
+				&:hover, 
+				&.active{
+					color: $orange;
+				}
+			}
+ 
+		}
+        border-right: 1px solid #c9c9ca;
+        padding-right: 0;
+        min-height: 400px;
+
+	}
+	.vignettes {
+        h2 {
+            line-height: 30px;
+            font-size: $fs26px;
+            font-family: $american;
+            margin: 0 0 18px 0;
+            color: $black;
+        }
+		width: 700px;
+        margin-left: 10px;
+		float: left;
+		@each $article in $list-article-serie { //Loop sur la variable $list-article-serie pour afficher le bon background des articles vignettes
+            $i: index($list-article-serie, $article);
+            @include generate-vignette("menuHeader", 4);
+        }
+	}
+    
+    .clas-col {
+        float: left;
+        width: 230px;
+        margin-right: 14px;
+        h3, h3 a {
+            font-size: 26px;
+            line-height: 26px;
+            margin-bottom: 12px;
+            text-decoration: none;
+            color: $black;
+        }
+        &.clas-col-last {
+            margin-right: 0;
+        }
+
+        .clas-col-content {
+            height: 360px;
+            position: relative;
+            @include border-radius(5px);
+            behavior: url('/static/js/lib/PIE.htc');
+            position: relative;
+            background: $white;
+            p {
+                color: $grey4d;
+                font-size: 16px;
+                line-height: 20px;
+                height: 310px;
+                padding: 0 19px;
+                strong {
+                    font-family: $vag-rounded-bold; 
+                }
+            }
+            img {
+                position: relative;
+                @include border-radius(5px 5px 0 0);
+                behavior: url('/static/js/lib/PIE.htc');
+            }
+
+            .discover {
+                width: 100%;
+                display: inline-block;
+                text-align: center;
+                color: $orange;
+                font-size: 18px;
+            }
+
+            .orange {
+                color: $orange;
+            }
+            .bottom {
+                color: $black;
+                line-height: 20px;
+                bottom: 16px;
+                position: absolute;
+                width: 100%;
+                .starts {
+                    font-size: 14px;
+                    padding-left: 46px;
+                }
+                .price {
+                    padding-bottom : 16px;
+                    font-family: $american;
+                    font-size: 16px;
+                    .unit {
+                        font-size: 37px;
+                    }
+                    .cents {
+                        font-size: 20px;
+                    }
+                }
+                .old-price{
+           
+            text-decoration: line-through;
+
+          }
+            }
+        }
+
+        .clas-col-long {
+            p{
+                padding: 0 12px;
+                font-size: 15px;    
+            }            
+        }
+
+        .clas-col-content-centered {
+            text-align: center;
+        }
+    }
+    .clas-col-avantage-abo {
+        width: 220px;
+    }
+}
+
+
+.dropdown {
+    p {
+        padding-top: 30px !important;
+    }
+    position: relative;
+    margin-bottom: 24px;
+    z-index: 501;
+    .dropdown-select {
+        &.open {
+            -moz-box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.7);
+            -webkit-box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.7);
+            box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.7); 
+            -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=0, Color='#000')";
+            filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=0, Color='#000');
+        }
+        position: absolute;
+        right: 0;
+        top: 30px;
+        .dropdown-title {
+            background: #ededed url('/static/images/epg/icon-arrow-down-grey.png') no-repeat right center;
+            @include border-radius(6px 6px 0 0);
+            font-size: 15px;
+            padding: 15px 50px 15px 15px;
+            img {
+                vertical-align: middle;
+                margin-right: 10px;
+            }
+            border-bottom: 1px solid #dbdbdb;
+            cursor: pointer;
+        }
+        .is-closed{
+            background: #fff url('/static/images/epg/icon-arrow-down.png') no-repeat right center;
+            @include border-radius(6px);
+        }
+        .dropdown-list {
+            display: none;
+            font-family: $american;
+            font-size: 16px;
+            background-color: $white;
+            padding-bottom: 20px;
+            li {
+                padding: 0 15px;
+                a {
+                    display: block;
+                    padding: 10px 32px;
+                    border-top: 1px solid #dbdbdb;
+                    text-decoration: none;
+                }
+                &:hover {
+                    font-weight: bold;
+                }
+                &.first a  {
+                    padding-top: 28px;
+                    border: none;
+                }
+            }
+        }
+    } 
+}
+
+

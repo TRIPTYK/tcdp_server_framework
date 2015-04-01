@@ -1,0 +1,129 @@
+@import "compass/utilities/general/float";
+@import "compass/css3/border-radius";
+@import "variables";
+@import "mixins";
+@import "susy";
+footer {
+	background: $black;
+	.content {
+		@include container(980px);
+		ul {
+			margin-top: 40px;
+			
+		}
+
+		ul{
+			@include span(2.4 of 12);
+			&:last-child {
+	            @include span(2.4 of 12 last);
+	        }
+		}
+
+        .logo {
+            margin: 54px 54px 0 0;
+            float: left;
+        }
+
+		
+
+		font-family: $american;
+
+		li {
+			padding-bottom: 13px;
+			color: $lightgrey  ;
+			text-decoration: none;
+			font-family: $font-secondary;
+			font-size: 16px;
+			a {
+				font-size: 13px;
+			}
+		}
+
+		.title {
+			color: $white;
+			font-family: $american;
+			padding-bottom: 22px;
+			a {
+				font-size: 16px;
+			}
+		}
+		p {
+			color: $lightgrey  ;
+			text-decoration: none;
+			font-family: $font-secondary;
+			font-size: 13px;
+			padding:15px 0;
+			line-height:20px;
+		}
+		.second {
+			padding-top:22px;
+		}
+		.customInput input[type="text"]{
+			background:$grey4d;
+			color:$white;
+			width:180px;
+
+
+		}
+		.customInput input[type="submit"]{
+			cursor:pointer;
+		}
+
+		a {
+			color: $lightgrey  ;
+			text-decoration: none;
+			font-family: $font-secondary;
+			font-size: 16px;
+		}
+		a:hover{
+			text-decoration: underline;
+		}
+		.title a{
+
+			color:$white;
+			font-family: $american;
+
+		}
+	}
+	.footer-legals {
+		width: 980px;
+		margin: 0 auto;
+		li {
+			padding: 24px 0 12px 12px;
+			color: $lightgrey  ;
+			float: right;
+			font-size: 13px;
+			a {
+				font-size: 13px;
+				text-decoration: none;
+				color: $lightgrey  ;
+			}
+			a[href="/press/"] {
+				font-weight: bold;
+				color: $white;
+			}
+		}
+	}
+	.fb-like-box {
+		background: #000;
+	}
+}
+.section-legal{
+    background: url('/static/images/bg-betv-go.png') repeat-x;
+    font-size: 13px;
+    line-height: 16px;
+    .content{
+        @include container(960px);
+        padding: 20px 0;
+        h4{
+            color: #000;
+            font-weight: bold;
+        }
+        .underline{
+            text-decoration: underline;
+        }
+    }
+}
+
+
+

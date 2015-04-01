@@ -1,0 +1,285 @@
+@font-face {
+    font-family: 'museo';
+    src: url('/static/fonts/exljbris_-_museosansrounded-500-webfont.eot');
+    src: url('/static/fonts/exljbris_-_museosansrounded-500-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/static/fonts/exljbris_-_museosansrounded-500-webfont.woff') format('woff'),
+         url('/static/fonts/exljbris_-_museosansrounded-500-webfont.ttf') format('truetype'),
+         url('/static/fonts/exljbris_-_museosansrounded-500-webfont.svg#museo_sans_rounded500') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'museo-700';
+    src: url('/static/fonts/exljbris_-_museosansrounded-700-webfont.eot');
+    src: url('/static/fonts/exljbris_-_museosansrounded-700-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/static/fonts/exljbris_-_museosansrounded-700-webfont.woff') format('woff'),
+         url('/static/fonts/exljbris_-_museosansrounded-700-webfont.ttf') format('truetype'),
+         url('/static/fonts/exljbris_-_museosansrounded-700-webfont.svg#museo_sans_rounded700') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Helvetica-rounded';
+    src: url('/static/fonts/helvetica-rounded/helvetica-rounded.eot');
+    src: url('/static/fonts/helvetica-rounded/helvetica-rounded.eot?#iefix') format('embedded-opentype'),
+         url('/static/fonts/helvetica-rounded/helvetica-rounded.woff') format('woff'),
+         url('/static/fonts/helvetica-rounded/helvetica-rounded.ttf') format('truetype'),
+         url('/static/fonts/helvetica-rounded/helvetica-rounded.svg#helvetica_rounded') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    speak: none;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+}
+
+@font-face {
+    font-family: 'vagrounded-thin';
+    src: url('/static/fonts/vagrounded/vagrounded-thin.eot?');
+     src: url('/static/fonts/vagrounded/vagrounded-thin.eot?#iefix') format("embedded-opentype"), 
+        url('/static/fonts/vagrounded/vagrounded-thin.woff') format('woff'), 
+        url('/static/fonts/vagrounded/vagrounded-thin.ttf')  format('truetype'),
+        url('/static/fonts/vagrounded/vagrounded-thin.svg#vagrounded-thin') format('svg');
+        font-weight: normal;
+        font-style: normal;
+}
+
+@font-face {
+    font-family: 'vagrounded-light';
+    src: url('/static/fonts/vagrounded/vagrounded-light.eot?');
+     src: url('/static/fonts/vagrounded/vagrounded-light.eot?#iefix') format("embedded-opentype"), 
+        url('/static/fonts/vagrounded/vagrounded-light.woff') format('woff'), 
+        url('/static/fonts/vagrounded/vagrounded-light.ttf')  format('truetype'),
+        url('/static/fonts/vagrounded/vagrounded-light.svg#vagrounded-light') format('svg');
+        font-weight: normal;
+        font-style: normal;
+}
+
+@font-face {
+    font-family: 'vagrounded-bold';
+    src: url('/static/fonts/vagrounded/vagrounded-bold.eot?');
+     src: url('/static/fonts/vagrounded/vagrounded-bold.eot?#iefix') format("embedded-opentype"), 
+        url('/static/fonts/vagrounded/vagrounded-bold.woff') format('woff'), 
+        url('/static/fonts/vagrounded/vagrounded-bold.ttf')  format('truetype'),
+        url('/static/fonts/vagrounded/vagrounded-bold.svg#vagrounded-bold') format('svg');
+        font-weight: normal;
+        font-style: normal;
+}
+
+@font-face {
+  font-family: 'american';
+  src: url("/static/fonts/americantypewriterbetv-md-webfont.eot");
+  src: url("/static/fonts/americantypewriterbetv-md-webfont.eot?#iefix") format("embedded-opentype"), 
+       url("/static/fonts/americantypewriterbetv-md-webfont.woff") format("woff"),
+       url("/static/fonts/americantypewriterbetv-md-webfont.ttf") format("truetype"), 
+       url("/static/fonts/americantypewriterbetv-md-webfont.svg#american_typewriter") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body{
+	font-family: $font-primary;
+	font-size: 1em;
+	line-height:100%;
+	background: $betvgrey;
+	color:$darkblue;
+}
+
+input, select, button {
+    outline: none;
+}
+
+#{headings()}{
+	font-family: $font-secondary;
+	font-weight:normal;
+	color:$darkgray;
+}
+
+h1{
+	font-size : 2.2rem;
+	color:lighten($darkblue,25);
+	margin-bottom:.4rem;
+	border-bottom: 1px solid $lightgray;
+	padding-top: 10px;
+}
+h2 { 
+    color: $white; 
+    font-family: $american; 
+    font-size: $fs45px; }
+h3 { 
+    color: $black; 
+    font-family: $american; 
+    font-size: $fs32px; }
+
+a{
+	text-decoration: underline;
+	color:$mediumgray;
+	&:hover{
+	}
+}
+
+.btn-hidden {
+    display: none;
+}
+
+.container { @include container(960px); }
+.wide-container { @include container(100%); }
+
+.box-ariane {
+    position: relative;
+    background-size: 100%;
+    color: $white;
+    .box-border {
+        display: block;
+        width: 100%;
+        height: 1px;
+        background-size: 100%;
+    }
+    .container {
+        
+        ul {
+            display: block;
+            padding: 25px 0 20px 0;
+            li {
+                display: inline-block;
+                vertical-align: top;
+                background: url('/static/images/icon-arrow-ariane.png') no-repeat right center;
+                padding: 0 12px 0 0;
+                font-family: $font-secondary;
+                font-size: 1.1em;
+            }
+            .active {
+                text-decoration: underline;
+            }
+            .last {
+                background: none;
+                padding: 0;
+            }
+        }
+    }
+}
+
+.box-rainbow {
+    position: relative;
+    background: url('/static/images/image-rainbow-bg_rep.jpg') repeat-y center center;
+    background-size: 100%;
+    color: $white;
+    h1 {
+        color: $white;
+        font-family: $american;
+        font-weight: bold;
+        font-size: 2.8em;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        line-height: 1em;
+    }
+    p {
+        color: $greyC;
+        padding: 20px 0 40px 0;
+        font-family: $font-secondary;
+        font-size: 1em;
+    }
+}
+
+.box-white {
+    display: block;
+    position: relative;
+    border-radius: 5px;
+    box-shadow: 0 1px 2px $darkOpa2;
+    background: $white;
+    margin: 0 0 20px 0;
+    behavior: url('/static/js/lib/PIE.htc');
+}
+
+
+.breadcrumb{
+    padding:45px 0 15px 0;
+    font-size:15px;
+    color:$white;
+    font-weight:lighter;
+    font-family:$vag-rounded-thin;
+    a {
+        font-size:15px;
+        color:$white;
+        font-weight:lighter;
+        font-family:$vag-rounded-thin;
+        text-decoration:none;
+    }
+    .last a{
+        font-weight:lighter;
+        color:$white;
+        text-decoration: underline;
+    }
+    .breadcrumbs-arrow{
+       padding:0 5px;
+    }
+}
+.rainbow-line{height:1px;margin:0;border:0;background:url('/static/images/rainbow-line-full.png') center top no-repeat;}
+.rainbow-line-420{height:1px;margin:0;border:0;background: url('/static/images/rainbow-line-420.jpg') no-repeat top center;}
+.rainbow-line-470{height:1px;margin:0;border:0;background: url('/static/images/rainbow-line-470.jpg') no-repeat top center;}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+.overlay { 
+  z-index: 999;
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  // background: rgba(0,0,0,0.8);
+  background-color: #000000 !important;
+  opacity: 0.8 !important;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+}
+
+.overlib-video{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 10000;
+    background: url('/static/images/shadow-dark.png');
+    .overlib-video-container{
+        width: 560px;
+        height: 315px;
+        margin: 250px auto 0 auto;
+        position: relative;
+    }
+    a.overlib-video-close{
+        display: block;
+        width: 25px;
+        height: 25px;
+        background: url('/static/images/icon-popup-close.png') no-repeat $white center center;
+        @include border-radius(50%);
+        border: 3px solid $black;
+        position: absolute;
+        top: -12px;
+        right: -12px;
+        cursor: pointer;
+    }
+}
+.white{color:$white!important;}
+.black{color:$black!important;}
+.old-price{text-decoration: line-through;}

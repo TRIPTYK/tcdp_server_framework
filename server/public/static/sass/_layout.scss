@@ -1,0 +1,127 @@
+@import "susy";
+@import "compass/css3/images";
+
+
+.container { @include container(960px); }
+.wide-container { @include container(100%); }
+
+.rainbow-bg { background: url('/static/images/rainbow.jpg') 50% 0 repeat-y; padding-bottom: 25px; 
+    h1 {line-height:100%; margin : 5px 0 0; color:white; font-family :"american", Courier,"Courier New"; font-size:2.5em; border-bottom:none; padding-top:0px;}
+    p { color: #fff; padding-top: 12px; line-height: 20px; }
+}
+.clear { width: 100%; clear: both; }
+
+
+.betv-gradient {
+    @include betvGradient;
+}
+.betv-gradient-1px {
+    @include betvGradient(1px);
+}
+
+aside.thumb {
+    text-align: center;
+    height: 51px;
+}
+
+.thumb-black {
+    @include thumb-bt($black, 'black', $white);
+}
+.thumb-white {
+    @include thumb-bt($white, 'white', $black);
+}
+.thumb-white-bg {
+    @include thumb-bt-bg($white, 'white', 'white', $black);
+}
+.thumb-grey-bg {
+    @include thumb-bt-bg(#d8d8d8, 'white', 'grey', $black);
+}
+.thumb-grey {
+    @include thumb-bt($grey, 'white', $black);
+}
+.thumb-light-grey {
+    @include thumb-bt($lightergrey, 'white', $black);
+}
+.thumb-dark {
+    @include thumb-bt($dark, 'black', $black);
+}
+.thumb-dark-grey {
+    @include thumb-bt(#1a1a1a, 'black', $white);
+}
+
+.thumb-1f1f1f {
+    @include thumb-bt(#1f1f1f, 'black', $white);
+}
+
+.thumb-303030 {
+    @include thumb-bt(#303030, 'black', $white);
+}
+
+.thumb-e0e0e0 {
+    @include thumb-bt(#e0e0e0, 'white', $black);
+}
+
+.thumb-f3f3f3 {
+    @include thumb-bt(#f3f3f3, 'white', $black);
+}
+
+.thumb-222c56 {
+    @include thumb-bt(#222c56, 'black', $white);
+}
+
+.customInput {
+    input {
+        @include float(left);
+    }
+    input[type=text] {
+        background: #d3d3d3;
+        @include border-radius(5px);
+        width: 188px;
+        padding: 0 0 0 8px;
+        height: 40px;
+        border: none;
+        font-size: 16px;
+        line-height: 40px;
+    }
+
+    input[type=submit] {
+        @include border-radius(5px);
+        background: $orange;
+        border: none;
+        width: 43px;
+        height: 40px;
+        color: $white;
+        font-size: $fs16px;
+        margin-left: -43px;
+        padding: 0;
+        font-family: $font-secondary;
+    }
+}
+
+.fb-like {
+    text-align: right;
+    .fb_like_box{
+        float:right;
+        height:40px;
+        text-align:center;
+        line-height:40px;
+        width:62px;
+        color:$white;
+        background:#243c7a;
+    } 
+}
+
+.fb-like-box {
+    background: #fff;
+}
+
+.sprites { display: inline-block; background: url('/static/images/spritesheet.png') no-repeat; }
+.fb { width: 21px; height: 21px; background-position: 0 0; }
+.gplus { width: 21px; height: 21px; background-position: -22px 0; }
+.tw { width: 21px; height: 21px; background-position: -44px 0; }
+.home { width: 16px; height: 15px; background-position: -1px -22px; }
+.magnifier { width: 14px; height: 15px; background-position: -18px -22px; }
+
+
+.sprites-betv { display: inline-block; background: url('/static/images/sprites-betv.png') no-repeat; }
+.betv-one { width: 21px; height: 21px; background-position: 0 0; }
