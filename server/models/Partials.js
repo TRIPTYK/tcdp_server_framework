@@ -1,34 +1,47 @@
 var fs = require('fs');
-
+var walk = require('walk');
+var path = require('path');
+var hbs = require('handlebars');
+var _ = require('lodash');
 
 function partialsModel() {
   console.log('partialsModel initialized');
   var that = {};
-  var partials;
+  var partials = [];
 
   function init(folder, fn) {
-    fs.readdir(process.cwd() + folder, function(err, data) {
-      if (err) return console.log(err);
-      try {
-        console.log(data)
+    var walker = walk.walk(path.join(process.cwd(), folder));
+    walker.on("file", function(root, fileStats, next) {
+      var tempName = 'partials/'+path.join(root, fileStats.name).replace(path.join(process.cwd(), folder) + '/', '').replace('.hbs', '')
+      fs.readFile(path.join(root, fileStats.name), function(err, data) {
+        if (err) return console.log(err);
+        partials.push({
+          name: tempName,
+          value: data.toString('utf8')
+        });
+        next();
+      });
 
+    });
+    walker.on("end", function() {
+      fn();
+    })
+  }
 
-      } catch (e) {
-        throw e;
-      }
+  function registerPartials() {
+    partials.map(function(item) {
+      hbs.registerPartial(item.name, item.value);
     });
   }
 
-
-
-
-
-function getPartials(){
-  return partials;
-}
-
+  function getPartial(id) {
+    return _.find(partials, {
+      name: id
+    })
+  }
   that.init = init;
-  that.getPartials = getPartials;
+  that.registerPartials = registerPartials;
+  that.getPartial = getPartial;
   return that;
 }
 

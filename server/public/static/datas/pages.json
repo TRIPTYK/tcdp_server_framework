@@ -1,0 +1,42 @@
+{
+  "pages": [{
+    "id": "home",
+    "url_fr": "/",
+    "url_nl": "/",
+    "url_en": "/",
+    "url_de": "/",
+    "title_fr": "Accueil",
+    "title_nl": "Onthaal",
+    "title_en": "Home",
+    "title_de": "Zugang",
+    "meta_keywords_fr": "BeTv - Accueil",
+    "meta_keywords_nl": "BeTv - Accueil",
+    "meta_keywords_en": "BeTv - Accueil",
+    "meta_keywords_de": "BeTv - Accueil",
+    "meta_description_fr": "Be tv vous offre le top du top des nouvelles séries, du cinéma, du sport en direct et des documentaires. Découvrez notre nouvelle offre.",
+    "meta_description_nl": "Be tv vous offre le top du top des nouvelles séries, du cinéma, du sport en direct et des documentaires. Découvrez notre nouvelle offre.",
+    "meta_description_en": "Be tv vous offre le top du top des nouvelles séries, du cinéma, du sport en direct et des documentaires. Découvrez notre nouvelle offre.",
+    "meta_description_de": "Be tv vous offre le top du top des nouvelles séries, du cinéma, du sport en direct et des documentaires. Découvrez notre nouvelle offre.",
+    "template": "templates/accueil",
+    "css": [
+      "main.css",
+      "home.css",
+      "modules/header.css",
+      "modules/footer.css"
+    ],
+    "js": [
+      "modules/Menu.js",
+      "pages/betv-home.js"
+    ],
+    "header_footer": "true",
+    "parent": "theme-serie",
+    "breadcrumb_fr": "-",
+    "breadcrumb_nl": "-",
+    "breadcrumb_en": "-",
+    "breadcrumb_de": "-",
+    "controller": "",
+    "method": "",
+    "redirect": "",
+    "exact_match": "true"
+  }]
+}

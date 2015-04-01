@@ -5,5 +5,8 @@
     "localisation": {
       "acceptedLanguages":["fr", "nl", "en", "de"],
       "defaultLanguage":"fr"
+    },
+    "modelFiles":{
+      "pages" : "public/static/datas/pages.json"
     }
 }
