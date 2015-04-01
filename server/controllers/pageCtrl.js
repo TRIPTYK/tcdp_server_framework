@@ -72,7 +72,7 @@ var dataPage;
                   new compressor.minify({
                       type: 'clean-css',
                       fileIn: css,
-                      fileOut: path.join(process.cwd(), 'public/static/styles/' + pageData.id + '.min.css'),
+                      fileOut: path.join(process.cwd(), 'public/styles/' + pageData.id + '.min.css'),
                       options: [],
                       callback: function(err, min) {
                         if (err) console.log(err);
@@ -94,7 +94,7 @@ var dataPage;
                       new compressor.minify({
                           type: 'uglifyjs',
                           fileIn: js,
-                          fileOut: path.join(process.cwd(), 'public/static/scripts/' + pageData.id + '.min.js'),
+                          fileOut: path.join(process.cwd(), 'public/scripts/' + pageData.id + '.min.js'),
                           options: [],
                           callback: function(err, min) {
                             var tempPartial = '<script src="/scripts/'+  pageData.id + '.min.js' + '"></script>';

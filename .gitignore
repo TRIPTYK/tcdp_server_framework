@@ -4,6 +4,6 @@
 npm-debug.log
 bower_components
 node_modules
-public/scripts
-public/styles
+server/public/scripts
+server/public/styles
 distribution
