@@ -24,10 +24,17 @@ function pagesModel() {
     var result = _.find(pages, searchKey);
     return result;
   }
+  function searchPageById(id) {
+    var searchKey = {};
+    searchKey["id"] = id;
+    var result = _.find(pages, searchKey);
+    return result;
+  }
 
 
   that.init = init;
   that.searchPage = searchPage;
+  that.searchPageById = searchPageById;
   return that;
 }
 

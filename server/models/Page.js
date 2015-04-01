@@ -28,8 +28,6 @@ function pageDataModel() {
       }
 
     }
-
-
       function setPageData(tempUrl) {
         (tempUrl.substr(tempUrl.length - 1) === "/") ? pageUrl = "/" + tempUrl.substr(3): pageUrl = "/" + tempUrl.substr(3) + "/";
         var pageJson = modelPages.searchPage(pageUrl, language);
@@ -50,6 +48,7 @@ function pageDataModel() {
           pageData.redirect = pageJson["redirect"];
           pageData.exact_match = pageJson["exact_match"];
           pageData.template = pageJson["template"];
+          pageData.langue = getLanguage();
         }
       }
 

@@ -68,6 +68,7 @@ function routeChain() {
                   return path.join(process.cwd(), 'public/static/css', item);
                 });
                 try {
+                  console.log(pageData.id);
                   new compressor.minify({
                       type: 'clean-css',
                       fileIn: css,
