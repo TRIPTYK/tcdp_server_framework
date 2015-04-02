@@ -6,4 +6,5 @@ bower_components
 node_modules
 server/public/scripts
 server/public/styles
+server/public/static/css
 distribution
