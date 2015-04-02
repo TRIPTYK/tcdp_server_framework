@@ -12,36 +12,51 @@ module.exports = function(grunt) {
     sass: {
       options: {
         sourceMap: false,
-        outputStyle: 'compressed',
-        includePaths: ['bower_components/compass-mixins/lib/', 'bower_components/susy/sass/', 'server/static/sass']
+        outputStyle: 'expanded',//'compressed',
+        includePaths: ['bower_components/compass-mixins/lib/', 'bower_components/susy/sass/', 'server/public/static/sass']
       },
       dist: {
         files: [{
           expand: true, // Enable dynamic expansion.
-          cwd: 'server/static/sass/', // Src matches are relative to this path.
+          cwd: 'server/public/static/sass/', // Src matches are relative to this path.
           src: ['**/*.scss'], // Actual pattern(s) to match.
-          dest: 'server/static/css', // Destination path prefix.
+          dest: 'server/public/static/css', // Destination path prefix.
           ext: '.css', // Dest filepaths will have this extension.
           extDot: 'first' // Extensions in filenames begin after the first dot
         }, ],
       }
     },
-
+    execute: {
+        server: {
+          options: {
+                // pass arguments to node itself (eg: before script parameter)
+                cwd: 'server'
+            },
+            src: ['server/app.js']
+        }
+    },
     watch: {
       options: {
         livereload: true
       },
       compass: {
-        files: ["<%= files.sass.src %>/**/*.scss"],
+        files: ["server/public/static/sass/**/*.scss"],
         tasks: ["sass:dist"]
       },
       grunt: {
         files: ["Gruntfile.js"]
+      },
+    },
+    concurrent: {
+      dev: {
+          tasks: ['execute', 'watch'],
+          options: {
+              logConcurrentOutput: true
+          }
       }
     }
   });
   // # Loads all plugins that match "grunt-", in this case all of our current plugins
-  grunt.loadTasks("tasks");
   require('matchdep').filterAll('grunt-*').forEach(grunt.loadNpmTasks);
-  grunt.registerTask("default", ["sass:dist"]);
+  grunt.registerTask("default", ["sass:dist","concurrent:dev"]);
 }

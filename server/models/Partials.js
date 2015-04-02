@@ -9,6 +9,8 @@ function partialsModel() {
   var partials = [];
 
   function init(folder, fn) {
+    console.log("partial init");
+    partials = [];
     var walker = walk.walk(path.join(process.cwd(), folder));
     walker.on("file", function(root, fileStats, next) {
       var tempName = 'partials/'+path.join(root, fileStats.name).replace(path.join(process.cwd(), folder) + '/', '').replace('.hbs', '')

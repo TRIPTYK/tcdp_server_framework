@@ -8,6 +8,7 @@ var router = express.Router();
 var hbs = require('handlebars');
 var modelPages = require('../models/Pages.js');
 var modelPartials = require('../models/Partials.js');
+var modelDatas = require('../models/Datas.js');
 var dataPage;
 
 
@@ -21,6 +22,11 @@ var dataPage;
           },
           modelPartials: function(callback) {
             modelPartials.init("/public/static/partials", function(err, data) {
+              callback(null, data);
+            });
+          },
+          modelDatas : function(callback){
+            modelDatas.init("/public/static/datas", function(err, data) {
               callback(null, data);
             });
           }

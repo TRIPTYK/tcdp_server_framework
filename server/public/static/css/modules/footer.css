@@ -1,126 +1,121 @@
+@charset "UTF-8";
+/* color magritte 2015 */
+/* offer colours */
+/* =) */
+/* Color product */
+/* Nuance de gris */
+/* Noir/gris transparent */
+/* page offre */
+/* On doit ajouter cette fonction lorsque compass utilise les nombres */
+/*
+ * A partial implementation of the Ruby list functions from Compass:
+ * https://github.com/Compass/compass/blob/stable/lib/compass/sass_extensions/functions/lists.rb
+ */
+/*
+ * A partial implementation of the Ruby constants functions from Compass:
+ * https://github.com/Compass/compass/blob/stable/lib/compass/sass_extensions/functions/constants.rb
+ */
+/*
+ * A partial implementation of the Ruby display functions from Compass:
+ * https://github.com/Compass/compass/blob/stable/core/lib/compass/core/sass_extensions/functions/display.rb
+ */
+/* MIXIN FOR FUNNEL */
 footer {
-  background: #000000
-}
-footer .content {
-  max-width: 980px;
-  margin-left: auto;
-  margin-right: auto;
-  font-family: 'american', Courier, 'Courier New'
-}
-footer .content:after {
-  content: " ";
-  display: block;
-  clear: both
-}
-footer .content ul {
-  margin-top: 40px
-}
-footer .content ul {
-  width: 18.6440677966%;
-  float: left;
-  margin-right: 1.6949152542%
-}
-footer .content ul:last-child {
-  width: 18.6440677966%;
-  float: right;
-  margin-right: 0
-}
-footer .content .logo {
-  margin: 54px 54px 0 0;
-  float: left
-}
-footer .content li {
-  padding-bottom: 13px;
-  color: #999999;
-  text-decoration: none;
-  font-family: 'vagrounded-thin', Arial, Helvetica, sans-serif;
-  font-size: 16px
-}
-footer .content li a {
-  font-size: 13px
-}
-footer .content .title {
-  color: #ffffff;
-  font-family: 'american', Courier, 'Courier New';
-  padding-bottom: 22px
-}
-footer .content .title a {
-  font-size: 16px
-}
-footer .content p {
-  color: #999999;
-  text-decoration: none;
-  font-family: 'vagrounded-thin', Arial, Helvetica, sans-serif;
-  font-size: 13px;
-  padding: 15px 0;
-  line-height: 20px
-}
-footer .content .second {
-  padding-top: 22px
-}
-footer .content .customInput input[type="text"] {
-  background: #4d4d4d;
-  color: #ffffff;
-  width: 180px
-}
-footer .content .customInput input[type="submit"] {
-  cursor: pointer
-}
-footer .content a {
-  color: #999999;
-  text-decoration: none;
-  font-family: 'vagrounded-thin', Arial, Helvetica, sans-serif;
-  font-size: 16px
-}
-footer .content a:hover {
-  text-decoration: underline
-}
-footer .content .title a {
-  color: #ffffff;
-  font-family: 'american', Courier, 'Courier New'
-}
-footer .footer-legals {
-  width: 980px;
-  margin: 0 auto
-}
-footer .footer-legals li {
-  padding: 24px 0 12px 12px;
-  color: #999999;
-  float: right;
-  font-size: 13px
-}
-footer .footer-legals li a {
-  font-size: 13px;
-  text-decoration: none;
-  color: #999999
-}
-footer .footer-legals li a[href="/press/"] {
-  font-weight: bold;
-  color: #ffffff
-}
-footer .fb-like-box {
-  background: #000
-}
+  background: #000000; }
+  footer .content {
+    max-width: 980px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'american', Courier, 'Courier New'; }
+    footer .content:after {
+      content: " ";
+      display: block;
+      clear: both; }
+    footer .content ul {
+      margin-top: 40px; }
+    footer .content ul {
+      width: 18.6440677966%;
+      float: left;
+      margin-right: 1.6949152542%; }
+      footer .content ul:last-child {
+        width: 18.6440677966%;
+        float: right;
+        margin-right: 0; }
+    footer .content .logo {
+      margin: 54px 54px 0 0;
+      float: left; }
+    footer .content li {
+      padding-bottom: 13px;
+      color: #999999;
+      text-decoration: none;
+      font-family: 'vagrounded-thin', Arial, Helvetica, sans-serif;
+      font-size: 16px; }
+      footer .content li a {
+        font-size: 13px; }
+    footer .content .title {
+      color: #ffffff;
+      font-family: 'american', Courier, 'Courier New';
+      padding-bottom: 22px; }
+      footer .content .title a {
+        font-size: 16px; }
+    footer .content p {
+      color: #999999;
+      text-decoration: none;
+      font-family: 'vagrounded-thin', Arial, Helvetica, sans-serif;
+      font-size: 13px;
+      padding: 15px 0;
+      line-height: 20px; }
+    footer .content .second {
+      padding-top: 22px; }
+    footer .content .customInput input[type="text"] {
+      background: #4d4d4d;
+      color: #ffffff;
+      width: 180px; }
+    footer .content .customInput input[type="submit"] {
+      cursor: pointer; }
+    footer .content a {
+      color: #999999;
+      text-decoration: none;
+      font-family: 'vagrounded-thin', Arial, Helvetica, sans-serif;
+      font-size: 16px; }
+    footer .content a:hover {
+      text-decoration: underline; }
+    footer .content .title a {
+      color: #ffffff;
+      font-family: 'american', Courier, 'Courier New'; }
+  footer .footer-legals {
+    width: 980px;
+    margin: 0 auto; }
+    footer .footer-legals li {
+      padding: 24px 0 12px 12px;
+      color: #999999;
+      float: right;
+      font-size: 13px; }
+      footer .footer-legals li a {
+        font-size: 13px;
+        text-decoration: none;
+        color: #999999; }
+      footer .footer-legals li a[href="/press/"] {
+        font-weight: bold;
+        color: #ffffff; }
+  footer .fb-like-box {
+    background: #000; }
+
 .section-legal {
-  background: url('/static/assets/images/bg-betv-go.png') repeat-x;
+  background: url('/static/images/bg-betv-go.png') repeat-x;
   font-size: 13px;
-  line-height: 16px
-}
-.section-legal .content {
-  max-width: 960px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 20px 0
-}
-.section-legal .content:after {
-  content: " ";
-  display: block;
-  clear: both
-}
-.section-legal .content h4 {
-  color: #000;
-  font-weight: bold
-}
-.section-legal .content .underline {
-  text-decoration: underline
-}
+  line-height: 16px; }
+  .section-legal .content {
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px 0; }
+    .section-legal .content:after {
+      content: " ";
+      display: block;
+      clear: both; }
+    .section-legal .content h4 {
+      color: #000;
+      font-weight: bold; }
+    .section-legal .content .underline {
+      text-decoration: underline; }

@@ -1,0 +1,52 @@
+@charset "UTF-8";
+/* color magritte 2015 */
+/* offer colours */
+/* =) */
+/* Color product */
+/* Nuance de gris */
+/* Noir/gris transparent */
+/* page offre */
+/* On doit ajouter cette fonction lorsque compass utilise les nombres */
+/*
+ * A partial implementation of the Ruby list functions from Compass:
+ * https://github.com/Compass/compass/blob/stable/lib/compass/sass_extensions/functions/lists.rb
+ */
+/*
+ * A partial implementation of the Ruby constants functions from Compass:
+ * https://github.com/Compass/compass/blob/stable/lib/compass/sass_extensions/functions/constants.rb
+ */
+/*
+ * A partial implementation of the Ruby display functions from Compass:
+ * https://github.com/Compass/compass/blob/stable/core/lib/compass/core/sass_extensions/functions/display.rb
+ */
+/* MIXIN FOR FUNNEL */
+.thumb-menu {
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto; }
+  .thumb-menu:after {
+    content: " ";
+    display: block;
+    clear: both; }
+  .thumb-menu ul li {
+    height: 56px;
+    display: inline;
+    float: left; }
+    .thumb-menu ul li a {
+      display: inline-block;
+      padding: 0 50px;
+      line-height: 56px;
+      color: #ffffff;
+      text-decoration: none;
+      background: #1b282f;
+      margin: 25px 10px 0 0;
+      -webkit-border-radius: 5px 5px 0 0;
+      -moz-border-radius: 5px 5px 0 0;
+      -ms-border-radius: 5px 5px 0 0;
+      -o-border-radius: 5px 5px 0 0;
+      border-radius: 5px 5px 0 0;
+      behavior: url('/static/js/lib/PIE.htc');
+      position: relative; }
+      .thumb-menu ul li a:hover, .thumb-menu ul li a.active {
+        color: #e85d10;
+        background: #eeeeee; }
